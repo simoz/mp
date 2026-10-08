@@ -5,7 +5,7 @@
 set -e
 cd "$(dirname "$0")"
 python3 - <<'PY'
-js="".join(open(f"src/{f}.js").read()+"\n" for f in ["engine","livello1","livello2","boot"])
+js="".join(open(f"src/{f}.js").read()+"\n" for f in ["engine","livello1","livello2","livello3","boot"])
 page=open("src/page.html").read().replace("/*SCRIPTS*/","(()=>{\n"+js+"})();")
 open("missioni-nonna-emma.html","w").write(page)
 head=('<!doctype html>\n<html lang="it">\n<head>\n<meta charset="utf-8">\n'

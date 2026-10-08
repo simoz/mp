@@ -40,10 +40,11 @@ Voce: bambina italiana di 6 anni, allegra ed emozionata, pronuncia chiara.
 - Che bella coroncina!
 
 ### Livello 2 – A casa dei nonni
-- Aiuta i nonni!
+- Aiuta i nonni!  (anche nel livello 3, con "Ciao Maci!")
 - Piumi! Giochiamo?
 - Prendi il gomitolo!
 - Andiamo a merenda!
+- Maci! Giochiamo?  (se si gioca con Maci)
 
 ## Nonna Luisa
 Voce: nonna gentile e affettuosa (ora: Microsoft Isabella, tono più basso e lento).
@@ -61,6 +62,7 @@ Voce: nonna gentile e affettuosa (ora: Microsoft Isabella, tono più basso e len
 - Ecco tè e biscotti!
 - Brava Piumi!
 - Tutti a merenda!
+- Con Maci o Piumi: Ciao Maci! · Cerca bene, Maci! · Grazie Maci! Ora ci vedo. · Bravo Maci! · Grazie Piumi! · Grazie Maci!
 
 ## Nonno Gian
 Voce: nonno simpatico e tranquillo (ora: Microsoft Diego, tono più basso e lento).
@@ -79,8 +81,42 @@ Voce: nonno simpatico e tranquillo (ora: Microsoft Diego, tono più basso e lent
 - Margherita vuole giocare.
 - Vai da Margherita!
 - Tutti a merenda!
+- Con Maci: Ciao Maci! · Cosa cerchi, Maci? · Il telecomando! Bravo Maci!
+
+## Nonna Lucy
+Voce: nonna allegra e affettuosa (ora: Microsoft Elsa, tono più basso e lento). File `y01`…`y14`.
+
+### Livello 3 – In montagna dai nonni
+- Ciao Maci!
+- Facciamo una torta di mirtilli.
+- Raccogli tre mirtilli!
+- Cerca i cespugli blu!
+- Che bei mirtilli!
+- Grazie Maci!
+- Vai dal nonno Gianco.
+- La torta è nel forno.
+- Ecco la torta di mirtilli!
+- Bravo Maci!
+- Tutti a merenda!
+- Con Piumi: Ciao Piumi! · Grazie Piumi! · Brava Piumi!
+
+## Nonno Gianco
+Voce: nonno sorridente e tranquillo (ora: Microsoft Diego, tono un po' più basso, ritmo vivace). File `k01`…`k12`.
+
+### Livello 3 – In montagna dai nonni
+- Ciao Maci!
+- Vai dalla nonna Lucy.
+- Il vento ha preso il mio cappello!
+- Mi aiuti a prenderlo?
+- Corri, Maci!
+- Il mio cappello!
+- Grazie Maci!
+- La torta è pronta!
+- Tutti a merenda!
+- Con Piumi: Ciao Piumi! · Corri, Piumi! · Grazie Piumi!
 
 ## Musiche
 - Livello 1: tema del giardino (loop allegro, flauto, pizzicato, glockenspiel)
 - Festa finale: fanfara breve di vittoria
 - Livello 2: "Sunny Afternoon Tea" (Suno), tema calmo da casa dei nonni
+- Livello 3: "Sonniger Bergwiesen" (Suno), tema alpino allegro con fisarmonica e campanacci

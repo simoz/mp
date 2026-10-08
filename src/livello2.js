@@ -136,36 +136,36 @@ function drawRemote(c,x,y){rr(c,x-7,y-16,14,32,5);fs(c,'#2f2f38',2.5);C(c,x,y-9,
 
 function talkLuisa(){
   const s=S.state;
-  if(s==0)openDialog('luisa',['CIAO PIUMI!','NON TROVO I MIEI OCCHIALI.','MI AIUTI A CERCARLI?'],()=>setState(1));
-  else if(s==1)openDialog('luisa',['CERCA BENE, PIUMI!']);
-  else if(s==2)openDialog('luisa',['I MIEI OCCHIALI!','GRAZIE PIUMI! ORA CI VEDO.','VAI DAL NONNO GIAN.'],()=>{S.carry=null;S.luisaGlasses=true;sfx.pick();burst(S.npc.luisa.x,S.npc.luisa.y-110,24,['#ff6fa8','#fff','#ffc93d']);setState(3);});
+  if(s==0)openDialog('luisa',[`CIAO ${N()}!`,'NON TROVO I MIEI OCCHIALI.','MI AIUTI A CERCARLI?'],()=>setState(1));
+  else if(s==1)openDialog('luisa',[`CERCA BENE, ${N()}!`]);
+  else if(s==2)openDialog('luisa',['I MIEI OCCHIALI!',`GRAZIE ${N()}! ORA CI VEDO.`,'VAI DAL NONNO GIAN.'],()=>{S.carry=null;S.luisaGlasses=true;sfx.pick();burst(S.npc.luisa.x,S.npc.luisa.y-110,24,['#ff6fa8','#fff','#ffc93d']);setState(3);});
   else if(s==3)openDialog('luisa',['VAI DAL NONNO GIAN.']);
-  else if(s<6)openDialog('luisa',['BRAVA PIUMI!']);
+  else if(s<6)openDialog('luisa',[`${BRAV()} ${N()}!`]);
   else if(s<8)openDialog('luisa',['GIOCA CON MARGHERITA!']);
   else openDialog('luisa',['VIENI AL TAVOLO!']);
 }
 function talkGian(){
   const s=S.state;
-  if(s==0)openDialog('gian',['CIAO PIUMI!','VAI DALLA NONNA LUISA.']);
+  if(s==0)openDialog('gian',[`CIAO ${N()}!`,'VAI DALLA NONNA LUISA.']);
   else if(s==1){
-    if(S.searched>=2)openDialog('gian',['COSA CERCHI, PIUMI?','GLI OCCHIALI?','OH! SONO SULLA MIA TESTA!'],()=>{S.gianHead=false;S.carry='occhiali';sfx.pick();floatText(S.p.x,S.p.y-90,'GLI OCCHIALI!','#ffc93d');setState(2);});
-    else openDialog('gian',['CIAO PIUMI!','CERCA BENE!']);}
+    if(S.searched>=2)openDialog('gian',[`COSA CERCHI, ${N()}?`,'GLI OCCHIALI?','OH! SONO SULLA MIA TESTA!'],()=>{S.gianHead=false;S.carry='occhiali';sfx.pick();floatText(S.p.x,S.p.y-90,'GLI OCCHIALI!','#ffc93d');setState(2);});
+    else openDialog('gian',[`CIAO ${N()}!`,'CERCA BENE!']);}
   else if(s==2)openDialog('gian',['PORTA GLI OCCHIALI ALLA NONNA!']);
-  else if(s==3)openDialog('gian',['CIAO PIUMI!','NON TROVO IL TELECOMANDO.','CERCA SOTTO IL DIVANO!'],()=>setState(4));
+  else if(s==3)openDialog('gian',[`CIAO ${N()}!`,'NON TROVO IL TELECOMANDO.','CERCA SOTTO IL DIVANO!'],()=>setState(4));
   else if(s==4)openDialog('gian',['CERCA SOTTO IL DIVANO!']);
-  else if(s==5)openDialog('gian',['IL TELECOMANDO! BRAVA PIUMI!','MARGHERITA VUOLE GIOCARE.'],()=>{S.carry=null;sfx.pick();setState(6);});
+  else if(s==5)openDialog('gian',[`IL TELECOMANDO! ${BRAV()} ${N()}!`,'MARGHERITA VUOLE GIOCARE.'],()=>{S.carry=null;sfx.pick();setState(6);});
   else if(s<8)openDialog('gian',['VAI DA MARGHERITA!']);
   else openDialog('gian',['TUTTI A MERENDA!']);
 }
 function talkGirl(){
   const s=S.state;
-  if(s<6)openDialog('girl',['CIAO PIUMI!','AIUTA I NONNI!']);
-  else if(s==6)openDialog('girl',['PIUMI! GIOCHIAMO?','PRENDI IL GOMITOLO!'],()=>{const b=S.ball;b.on=true;b.x=S.npc.girl.x+46;b.y=S.npc.girl.y+12;b.vx=b.vy=0;setState(7);});
+  if(s<6)openDialog('girl',[`CIAO ${N()}!`,'AIUTA I NONNI!']);
+  else if(s==6)openDialog('girl',[`${N()}! GIOCHIAMO?`,'PRENDI IL GOMITOLO!'],()=>{const b=S.ball;b.on=true;b.x=S.npc.girl.x+46;b.y=S.npc.girl.y+12;b.vx=b.vy=0;setState(7);});
   else if(s==7)openDialog('girl',['PRENDI IL GOMITOLO!']);
   else openDialog('girl',['ANDIAMO A MERENDA!']);
 }
 function merenda(){
-  openDialog('luisa',['ECCO TÈ E BISCOTTI!','GRAZIE PIUMI!'],()=>{
+  openDialog('luisa',['ECCO TÈ E BISCOTTI!',`GRAZIE ${N()}!`],()=>{
     S.merenda=true;S.npc.gian={x:676,y:470};S.npc.luisa={x:968,y:470};S.npc.girl={x:820,y:404};
     setState(9);sfx.win();confetti(TABLE.x,TABLE.y-90);floatText(TABLE.x,TABLE.y-130,'MERENDA!','#ffc93d');
     finish('Che bella merenda dai nonni!',2.6);});
@@ -182,7 +182,7 @@ function wallBlocked(x,y){
 }
 
 LEVELS.push({
-  name:'A casa dei nonni',ww:WW,wh:WH,bg:'#c58a55',party:['piumi','maci'],locked:true,music:'audio/stage2.mp3',
+  name:'A casa dei nonni',ww:WW,wh:WH,bg:'#c58a55',party:['piumi','maci'],music:'audio/stage2.mp3',
   start:{p:{x:560,y:380},q:{x:520,y:400}},
   quests:['VAI DA NONNA LUISA','TROVA GLI OCCHIALI DELLA NONNA','PORTA GLI OCCHIALI ALLA NONNA','VAI DA NONNO GIAN','CERCA SOTTO IL DIVANO','PORTA IL TELECOMANDO AL NONNO','VAI DA MARGHERITA','PRENDI IL GOMITOLO','TUTTI A MERENDA!','MERENDA!'],
   fresh:()=>({searched:0,spots:SPOTS.map(s=>({...s,done:false})),luisaGlasses:false,gianHead:true,carry:null,merenda:false,
