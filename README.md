@@ -20,7 +20,7 @@ Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 - `genera-voce-margherita.sh`: genera nuove frasi con la voce di Margherita
 
 ## Crediti
-- Musica "Sunny Adventure" creata con [Suno](https://suno.com)
+- Musiche "Sunny Adventure" e "Sunny Afternoon Tea" create con [Suno](https://suno.com)
 - Voce di nonna Emma creata con [ElevenLabs](https://elevenlabs.io)
 - Voci di Margherita, nonna Luisa e nonno Gian: Microsoft Elsa, Isabella e Diego (sintesi neurale), generate con edge-tts
 - Font: [Fredoka](https://fonts.google.com/specimen/Fredoka) (Google Fonts)

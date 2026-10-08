@@ -83,4 +83,4 @@ Voce: nonno simpatico e tranquillo (ora: Microsoft Diego, tono più basso e lent
 ## Musiche
 - Livello 1: tema del giardino (loop allegro, flauto, pizzicato, glockenspiel)
 - Festa finale: fanfara breve di vittoria
-- Livello 2: per ora usa la musica del livello 1 (da fare: tema calmo e accogliente per la casa dei nonni)
+- Livello 2: "Sunny Afternoon Tea" (Suno), tema calmo da casa dei nonni
