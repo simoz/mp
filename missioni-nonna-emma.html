@@ -48,9 +48,6 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .card h1 em{font-style:normal;color:var(--red)}
 .card p{margin:0;font-size:17px;color:var(--muted);font-weight:500;max-width:32ch}
 .card .btn{font-size:26px;padding:10px 34px;background:#f28c28;margin-top:8px}
-.vrow{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap;justify-content:center;font-weight:600;font-size:15px;color:var(--muted)}
-.vrow select{font-family:var(--display);font-size:15px;color:var(--ink);background:var(--paper-2);border:2px solid var(--ink);border-radius:10px;padding:5px 8px;max-width:220px}
-.vrow .btn.ghost{font-size:15px;padding:4px 12px;box-shadow:0 3px 0 var(--ink)}
 .stars{display:flex;gap:6px}
 .stars svg{width:52px;height:52px}
 @media (max-width:520px){.pic{width:64px;height:64px}.dialog{gap:10px;padding:10px}.btn{font-size:18px;padding:6px 12px}.pc canvas,.pc.mus svg{width:42px;height:42px}.quest{max-width:calc(100% - 215px)}}
@@ -86,7 +83,6 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
     <h1>Le missioni di <em>nonna Emma</em></h1>
     <p>Tocca il prato per far camminare il gatto. Sul computer puoi usare le frecce.</p>
     <button class="btn" id="play">GIOCA</button>
-    <div class="vrow"><label for="voice">Voce</label><select id="voice"></select><button class="btn ghost" id="voiceTry" type="button">Prova</button></div>
   </div>
 </div>
 
@@ -386,8 +382,6 @@ function nextPage(){if(!dlg)return;dlg.i++;if(dlg.i<dlg.pages.length){showPage()
   const d=dlg.done;dlg=null;music.volume=VOL;document.getElementById('dlg').hidden=true;stopVoice();if(d)d();}
 document.getElementById('dOk').onclick=nextPage;
 document.getElementById('dSay').onclick=()=>{if(dlg){const v=voice;voice=true;say(dlg.pages[dlg.i],dlg.who);voice=v;}};
-document.getElementById('voice').onchange=e=>{chosen=voices.find(v=>v.name==e.target.value)||chosen;try{localStorage.setItem('voce',e.target.value);}catch(err){}};
-document.getElementById('voiceTry').onclick=()=>{const v=voice;voice=true;say('CIAO MARGHERITA! SONO NONNA EMMA.','emma');voice=v;};
 
 function talkEmma(){
   if(S.state==0)openDialog('emma',[`CIAO ${N()}!`,'OGGI È LA FESTA DI MARGHERITA.','TROVA 3 MARGHERITE!'],()=>{S.state=1;updateHUD();});
