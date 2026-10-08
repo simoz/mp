@@ -1,13 +1,16 @@
 #!/bin/bash
-# Crea index.html (pagina web completa per GitHub Pages) da missioni-nonna-emma.html
+# Unisce src/ in un'unica pagina:
+#  - missioni-nonna-emma.html  (per l'Artifact di Claude)
+#  - index.html                (pagina completa per GitHub Pages)
 set -e
 cd "$(dirname "$0")"
-{
-  printf '<!doctype html>\n<html lang="it">\n<head>\n<meta charset="utf-8">\n'
-  printf '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
-  printf '<meta name="description" content="Livello 1: Maci e Piumi aiutano nonna Emma a preparare una coroncina di margherite.">\n'
-  printf '</head>\n<body>\n'
-  cat missioni-nonna-emma.html
-  printf '\n</body>\n</html>\n'
-} > index.html
-echo "Creato index.html"
+python3 - <<'PY'
+js="".join(open(f"src/{f}.js").read()+"\n" for f in ["engine","livello1","livello2","boot"])
+page=open("src/page.html").read().replace("/*SCRIPTS*/","(()=>{\n"+js+"})();")
+open("missioni-nonna-emma.html","w").write(page)
+head=('<!doctype html>\n<html lang="it">\n<head>\n<meta charset="utf-8">\n'
+ '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
+ '<meta name="description" content="Maci, Piumi e nonna Emma: un gioco con tre gatti.">\n</head>\n<body>\n')
+open("index.html","w").write(head+page+"\n</body>\n</html>\n")
+PY
+echo "Creati missioni-nonna-emma.html e index.html"

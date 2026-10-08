@@ -39,6 +39,48 @@ Voce: bambina italiana di 6 anni, allegra ed emozionata, pronuncia chiara.
 - Grazie! Vi voglio bene!
 - Che bella coroncina!
 
+### Livello 2 – A casa dei nonni
+- Aiuta i nonni!
+- Piumi! Giochiamo?
+- Prendi il gomitolo!
+- Andiamo a merenda!
+
+## Nonna Luisa
+Voce: nonna gentile e affettuosa (ora: Microsoft Isabella, tono più basso e lento).
+
+### Livello 2 – A casa dei nonni
+- Ciao Piumi!
+- Non trovo i miei occhiali.
+- Mi aiuti a cercarli?
+- Cerca bene, Piumi!
+- I miei occhiali!
+- Grazie Piumi! Ora ci vedo.
+- Vai dal nonno Gian.
+- Gioca con Margherita!
+- Vieni al tavolo!
+- Ecco tè e biscotti!
+- Brava Piumi!
+- Tutti a merenda!
+
+## Nonno Gian
+Voce: nonno simpatico e tranquillo (ora: Microsoft Diego, tono più basso e lento).
+
+### Livello 2 – A casa dei nonni
+- Ciao Piumi!
+- Vai dalla nonna Luisa.
+- Cerca bene!
+- Cosa cerchi, Piumi?
+- Gli occhiali?
+- Oh! Sono sulla mia testa!
+- Porta gli occhiali alla nonna!
+- Non trovo il telecomando.
+- Cerca sotto il divano!
+- Il telecomando! Brava Piumi!
+- Margherita vuole giocare.
+- Vai da Margherita!
+- Tutti a merenda!
+
 ## Musiche
 - Livello 1: tema del giardino (loop allegro, flauto, pizzicato, glockenspiel)
 - Festa finale: fanfara breve di vittoria
+- Livello 2: per ora usa la musica del livello 1 (da fare: tema calmo e accogliente per la casa dei nonni)
