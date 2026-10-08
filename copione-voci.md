@@ -28,7 +28,7 @@ Voce: nonna italiana dolce e calma, parla lenta e chiara, sorride.
 - Miao! Che bella festa!
 
 ## Margherita
-Voce: registrata da Margherita (vocali WhatsApp in `audio/whatsapp/`, convertiti in `m01`…`m12`).
+Voce: registrata da Margherita (vocali WhatsApp convertiti in `m01`…`m12`).
 
 ### Livello 1 – Il giardino di nonna Emma
 - Ciao Maci!

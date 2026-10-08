@@ -23,7 +23,7 @@ Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 ## Crediti
 - Musiche "Sunny Adventure", "Sunny Afternoon Tea" e "Sonniger Bergwiesen" create con [Suno](https://suno.com)
 - Voce di nonna Emma creata con [ElevenLabs](https://elevenlabs.io)
-- Voce di Margherita: registrata da Margherita (vocali originali in `audio/whatsapp/`)
+- Voce di Margherita: registrata da Margherita
 - Voci di nonna Luisa e nonno Gian: Microsoft Isabella e Diego (sintesi neurale), generate con edge-tts
 - Voci di nonna Lucy e nonno Gianco: Microsoft Elsa (tono più basso) e Diego, generate con edge-tts
 - Font: [Fredoka](https://fonts.google.com/specimen/Fredoka) (Google Fonts)
