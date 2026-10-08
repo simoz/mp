@@ -107,7 +107,7 @@ function drawGirl(c,x,y,o){
   c.restore();
 }
 
-/* nonno Gian e nonna Luisa, nonno Gianco e nonna Lucy, zio Giulio e zia Mile, zio Simone e zia Silvia */
+/* nonno Gian e nonna Luisa, nonno Gianco e nonna Lucy, zio Giulio e zia Mile, zio Simone e zia Silvia, mamma Cecilia e papà Andrea */
 const PEOPLE={
   gian:{shirt:'#a9cdea',stripe:'#ffffff',pants:'#2f3a5a',hair:'#f4f4f4',skin:'#f3c9a8',shoes:'#3a2a2a'},
   luisa:{shirt:'#26365e',pants:'#8d7a66',hair:'#e3d2b0',skin:'#f6d3b8',shoes:'#5a3a2a'},
@@ -115,6 +115,8 @@ const PEOPLE={
   lucy:{shirt:'#d9c7a3',scarf:'#3f6fb5',pants:'#3a3f55',hair:'#8a3f2a',skin:'#f6d3b8',shoes:'#5a3a2a'},
   giulio:{shirt:'#93303f',pants:'#59606e',hair:'#4a4340',beard:'#bdb6ad',beard2:'#d8d2ca',must:'#9d968d',skin:'#efc3a0',shoes:'#4a3428'},
   simone:{shirt:'#5b86c4',pants:'#3a3f55',hair:'#3a2a20',beard:'#7a5638',beard2:'#946c4c',must:'#5e4029',skin:'#f3c9a8',shoes:'#2f2a28'},
+  andrea:{shirt:'#f7f6f2',pants:'#d8c39a',hair:'#a8a49f',hair2:'#6f6a66',eye:'#4a7fb0',cuff:true,watch:true,skin:'#f3c9a8',shoes:'#8a5a3a'},
+  cecilia:{shirt:'#8e939b',sleeve:'#f0c4a0',pants:'#f0c4a0',hair:'#7a4a2e',skin:'#f0c4a0',shoes:'#ddaa84'},
   silvia:{shirt:'#c8453f',scarf:'#7a2a4a',pants:'#3a3f55',hair:'#5a3a26',skin:'#f6d3b8',shoes:'#4a3428'},
   mile:{shirt:'#2b2730',apron:'#7fb35a',pants:'#4a5a7a',hair:'#2a1e1e',skin:'#f6d3b8',shoes:'#6b3d22'}
 };
@@ -137,7 +139,11 @@ function drawPerson(c,x,y,o){
   rr(c,-12,lt,10,-lt-4,4);fs(c,P.pants,2.5);rr(c,2,lt,10,-lt-4,4);fs(c,P.pants,2.5);
   E(c,-7,-3,8,4.5);fs(c,P.shoes,2.5);E(c,7,-3,8,4.5);fs(c,P.shoes,2.5);
   const wave=o.wave&&!RM?Math.sin(t*7)*6:0;
-  const arm=(x1,y1,x2,y2)=>{c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.strokeStyle=OL;c.lineWidth=13;c.stroke();c.strokeStyle=P.shirt;c.lineWidth=9;c.stroke();C(c,x2,y2,5);fs(c,P.skin,2.5);};
+  const arm=(x1,y1,x2,y2)=>{c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.strokeStyle=OL;c.lineWidth=13;c.stroke();c.strokeStyle=P.sleeve||P.shirt;c.lineWidth=9;c.stroke();
+    if(P.cuff){const mx=x1+(x2-x1)*.55,my=y1+(y2-y1)*.55;c.beginPath();c.moveTo(mx,my);c.lineTo(x2,y2);c.strokeStyle=P.skin;c.lineWidth=8;c.stroke();
+      c.beginPath();c.moveTo(x1+(x2-x1)*.48,y1+(y2-y1)*.48);c.lineTo(mx,my);c.strokeStyle='#e6e4de';c.lineWidth=10;c.stroke();
+      if(P.watch&&x2<0){const wx=x1+(x2-x1)*.86,wy=y1+(y2-y1)*.86;c.beginPath();c.moveTo(wx-4,wy);c.lineTo(wx+4,wy);c.strokeStyle='#6b3d22';c.lineWidth=4;c.stroke();C(c,wx,wy,2.6);fs(c,'#2b2a33',1.2);}}
+    C(c,x2,y2,5);fs(c,P.skin,2.5);};
   arm(-14,top+8,-21,top+40);
   if(o.wave)arm(14,top+8,26+wave,top-12);else arm(14,top+8,21,top+40);
   rr(c,-17,top,34,lt-top+6,10);c.fillStyle=P.shirt;c.fill();
@@ -162,6 +168,12 @@ function drawPerson(c,x,y,o){
     c.strokeStyle='rgba(255,255,255,.55)';c.lineWidth=1;for(let k=-11;k<18;k+=12){c.beginPath();c.moveTo(k,top);c.lineTo(k,lt+6);c.moveTo(-17,top+k+25);c.lineTo(17,top+k+25);c.stroke();}
     c.beginPath();c.moveTo(0,top+8);c.lineTo(0,lt+6);c.strokeStyle='#2f4f86';c.lineWidth=1.6;c.stroke();[top+16,top+26,top+36].forEach(by=>{C(c,0,by,1.5);c.fillStyle='#fff';c.fill();});
     [-1,1].forEach(d=>{c.beginPath();c.moveTo(d*1,top);c.lineTo(d*9,top);c.lineTo(d*5,top+9);c.closePath();c.fillStyle='#4a74b0';c.fill();c.strokeStyle=OL;c.lineWidth=1.5;c.stroke();});}
+  else if(o.kind=='andrea'){c.beginPath();c.moveTo(0,top+6);c.lineTo(0,lt+6);c.strokeStyle='#d6d4ce';c.lineWidth=1.6;c.stroke();[top+16,top+26,top+36].forEach(by=>{C(c,0,by,1.5);c.fillStyle='#b9b6ae';c.fill();});
+    [-1,1].forEach(d=>{c.beginPath();c.moveTo(d*2,top);c.lineTo(d*10,top-1);c.lineTo(d*6,top+9);c.closePath();c.fillStyle='#fff';c.fill();c.strokeStyle=OL;c.lineWidth=1.5;c.stroke();});}
+  else if(o.kind=='cecilia'){c.beginPath();c.moveTo(-17,top-4);c.lineTo(-17,top+10);c.quadraticCurveTo(-10,top+4,-9,top-4);c.closePath();c.moveTo(17,top-4);c.lineTo(17,top+10);c.quadraticCurveTo(10,top+4,9,top-4);c.closePath();c.fillStyle=P.skin;c.fill();
+    c.beginPath();c.moveTo(-9,top-2);c.quadraticCurveTo(0,top+12,9,top-2);c.lineTo(9,top-6);c.lineTo(-9,top-6);c.closePath();c.fillStyle=P.skin;c.fill();
+    c.strokeStyle='#26222a';c.lineWidth=3.5;c.beginPath();c.moveTo(-9,top-2);c.quadraticCurveTo(0,top+12,9,top-2);c.moveTo(-17,top+10);c.quadraticCurveTo(-10,top+4,-9,top-2);c.moveTo(17,top+10);c.quadraticCurveTo(10,top+4,9,top-2);c.stroke();
+    c.fillStyle='#f4f4f4';c.fillRect(-1,top+16,9,2);}
   else if(o.kind=='silvia'){c.beginPath();c.moveTo(0,top+10);c.lineTo(0,lt+6);c.strokeStyle='#9a2f2a';c.lineWidth=2;c.stroke();
     c.strokeStyle='#a83a34';c.lineWidth=1.6;[-1,1].forEach(d=>{c.beginPath();c.moveTo(d*16,top+24);c.lineTo(d*6,top+24);c.stroke();});}
   c.restore();rr(c,-17,top,34,lt-top+6,10);c.lineWidth=2.8;c.strokeStyle=OL;c.stroke();
@@ -196,19 +208,28 @@ function drawPerson(c,x,y,o){
     c.beginPath();c.moveTo(-17,hy-1);c.quadraticCurveTo(-19,hy-20,0,hy-19);c.quadraticCurveTo(19,hy-20,17,hy-1);c.lineTo(15,hy-5);c.lineTo(15,hy-7);c.lineTo(-15,hy-7);c.lineTo(-15,hy-5);c.closePath();fs(c,P.hair,2.4);
     c.beginPath();c.moveTo(-8,hy-15);c.quadraticCurveTo(0,hy-18,8,hy-15);c.strokeStyle='#5a4646';c.lineWidth=2;c.stroke();
     [[-16],[16]].forEach(([d])=>{C(c,d,hy+9,3);c.strokeStyle='#e0b23a';c.lineWidth=1.8;c.stroke();});
+  }else if(o.kind=='andrea'){
+    E(c,-15.5,hy-3,3.5,7);fs(c,P.hair2,2);E(c,15.5,hy-3,3.5,7);fs(c,P.hair2,2);
+    c.beginPath();c.moveTo(-17.5,hy-2);c.quadraticCurveTo(-19,hy-20,-4,hy-23);c.quadraticCurveTo(8,hy-26,15,hy-17);c.quadraticCurveTo(18,hy-10,17.5,hy-3);c.quadraticCurveTo(12,hy-10,4,hy-11);c.quadraticCurveTo(-10,hy-10,-17.5,hy-2);c.closePath();fs(c,P.hair,2.2);
+    c.strokeStyle='#cbc7c1';c.lineWidth=1.8;[[-8,-16],[-1,-19],[6,-18]].forEach(([a,b])=>{c.beginPath();c.moveTo(a,hy+b+4);c.quadraticCurveTo(a+3,hy+b,a+8,hy+b-1);c.stroke();});
+  }else if(o.kind=='cecilia'){
+    C(c,3,hy-21,9);fs(c,P.hair,2.2);c.beginPath();c.arc(3,hy-21,5,.4,2.6);c.strokeStyle='#9a6440';c.lineWidth=1.6;c.stroke();
+    c.beginPath();c.arc(0,hy,17.5,Math.PI*1.04,Math.PI*1.96);c.quadraticCurveTo(10,hy-9,2,hy-12);c.quadraticCurveTo(-9,hy-10,-17.5,hy-1);c.closePath();fs(c,P.hair,2.2);
+    c.strokeStyle='#9a6440';c.lineWidth=1.6;[[-8],[0],[8]].forEach(([d])=>{c.beginPath();c.moveTo(d,hy-11);c.quadraticCurveTo(d*.6,hy-15,d*.3+2,hy-17);c.stroke();});
+    c.strokeStyle=P.hair;c.lineWidth=2.2;[[-1,-16],[1,16]].forEach(([d,a])=>{c.beginPath();c.moveTo(a,hy-4);c.quadraticCurveTo(a+d*4,hy+6,a+d*1,hy+14);c.stroke();});
   }else if(o.kind=='silvia'){
     c.beginPath();c.moveTo(-18,hy+4);c.quadraticCurveTo(-20,hy-20,0,hy-19);c.quadraticCurveTo(19,hy-19,18,hy+6);c.quadraticCurveTo(12,hy-6,-1,hy-9);c.quadraticCurveTo(-10,hy-8,-18,hy+4);c.closePath();fs(c,P.hair,2.5);
     c.beginPath();c.moveTo(-6,hy-15);c.quadraticCurveTo(4,hy-17,12,hy-11);c.strokeStyle='#7a5238';c.lineWidth=2;c.stroke();
   }else{[[-8,-13],[0,-15],[8,-13]].forEach(([a,b])=>{C(c,a,hy+b,6);fs(c,P.hair,2);});}
   const squint=o.kind=='luisa'&&!o.glasses;
   [[-7.5],[7.5]].forEach(([ex])=>{if(squint){c.beginPath();c.moveTo(ex-3,hy+1);c.lineTo(ex+3,hy+1);c.strokeStyle=OL;c.lineWidth=2.4;c.stroke();}
-    else{E(c,ex,hy+1,2.2,2.8);c.fillStyle='#2b2026';c.fill();C(c,ex-.7,hy,.8);c.fillStyle='#fff';c.fill();}});
+    else{E(c,ex,hy+1,2.2,2.8);c.fillStyle=P.eye||'#2b2026';c.fill();C(c,ex-.7,hy,.8);c.fillStyle='#fff';c.fill();}});
   if(o.kind=='gian')specs(c,hy+1,'#333');
   if(o.kind=='giulio')specs(c,hy+1,'#7a3b2e');
   if(o.kind=='luisa'&&o.glasses)specs(c,hy+1,'#d9534f');
   if(o.headGlasses)specs(c,hy-13,'#d9534f');
   if(!P.beard){E(c,-11,hy+7,3.4,2);E(c,11,hy+7,3.4,2);c.fillStyle='rgba(255,110,140,.45)';c.fill();}
-  if(o.kind=='mile'){c.beginPath();c.moveTo(-6,hy+6);c.quadraticCurveTo(0,hy+15,6,hy+6);c.closePath();fs(c,'#fff',1.8);}
+  if(o.kind=='mile'||o.kind=='cecilia'||o.kind=='andrea'){c.beginPath();c.moveTo(-6,hy+6);c.quadraticCurveTo(0,hy+15,6,hy+6);c.closePath();fs(c,'#fff',1.8);}
   else if(P.beard){c.beginPath();c.arc(0,hy+8,4,.15*Math.PI,.85*Math.PI);c.strokeStyle='#7a3b35';c.lineWidth=2;c.stroke();}
   else{c.beginPath();c.arc(0,hy+7,5,.18*Math.PI,.82*Math.PI);c.strokeStyle='#a5524a';c.lineWidth=2;c.stroke();}
   if(o.book){const by=top+34;rr(c,-19,by-14,38,24,3);fs(c,'#4f8fd8',2.4);
@@ -242,9 +263,9 @@ function voiceScore(v){const n=v.name.toLowerCase();let s=0;
   if(/compact|espeak/.test(n))s-=40;if(v.localService===false)s+=5;return s;}
 function loadVoices(){try{voices=speechSynthesis.getVoices().filter(v=>/^it/i.test(v.lang)).sort((a,b)=>voiceScore(b)-voiceScore(a));}catch(e){voices=[];}chosen=voices[0]||null;}
 try{loadVoices();speechSynthesis.onvoiceschanged=loadVoices;}catch(e){}
-const VOX={emma:{pitch:.95,rate:.82},girl:{pitch:1.3,rate:.95},luisa:{pitch:.95,rate:.85},gian:{pitch:.7,rate:.85},lucy:{pitch:1,rate:.85},gianco:{pitch:.75,rate:.85},giulio:{pitch:.8,rate:.9},mile:{pitch:1.05,rate:.9},simone:{pitch:.9,rate:.92},silvia:{pitch:1.05,rate:.9},cat:{pitch:1.15,rate:.9}};
+const VOX={emma:{pitch:.95,rate:.82},girl:{pitch:1.3,rate:.95},luisa:{pitch:.95,rate:.85},gian:{pitch:.7,rate:.85},lucy:{pitch:1,rate:.85},gianco:{pitch:.75,rate:.85},giulio:{pitch:.8,rate:.9},mile:{pitch:1.05,rate:.9},simone:{pitch:.9,rate:.92},cecilia:{pitch:1.1,rate:.9},andrea:{pitch:.9,rate:.9},silvia:{pitch:1.05,rate:.9},cat:{pitch:1.15,rate:.9}};
 /* Ogni frase registrata: audio/voce/<prefisso><numero>.mp3, nell'ordine di queste liste */
-const PREFIX={emma:'e',girl:'m',luisa:'l',gian:'g',lucy:'y',gianco:'k',giulio:'u',mile:'i',simone:'o',silvia:'s'};
+const PREFIX={emma:'e',girl:'m',luisa:'l',gian:'g',lucy:'y',gianco:'k',giulio:'u',mile:'i',simone:'o',silvia:'s',cecilia:'c',andrea:'a'};
 const LINES={
   emma:['CIAO MACI!','CIAO PIUMI!','OGGI È LA FESTA DI MARGHERITA.','TROVA 3 MARGHERITE!','NON HAI ANCORA MARGHERITE.','HAI 1 MARGHERITA.','HAI 2 MARGHERITE.','NE MANCANO 3!','NE MANCANO 2!','NE MANCA 1!','BRAVO! CHE BELLE!','BRAVA! CHE BELLE!','SERVE UN NASTRO.','CERCA SOTTO IL VASO!','IL NASTRO È SOTTO UN VASO.','PROVA TUTTI I VASI!','CORRI!','PORTA I FIORI A MARGHERITA!','MIAO! CHE BELLA FESTA!'],
   girl:['CIAO MACI!','CIAO PIUMI!',"DOV'È NONNA EMMA?",'CIAO MACI E PIUMI!','CHE BELLE MARGHERITE!','GRAZIE! VI VOGLIO BENE!','CHE BELLA CORONCINA!','AIUTA I NONNI!','PIUMI! GIOCHIAMO?','PRENDI IL GOMITOLO!','ANDIAMO A MERENDA!','MACI! GIOCHIAMO?'],
@@ -257,7 +278,9 @@ const LINES={
   giulio:['CIAO MACI!',"MI AIUTI NELL'ORTO?",'RACCOGLI 3 CAROTE!','CERCA LE FOGLIE GRANDI!','CHE BELLE CAROTE!','GRAZIE MACI!','VAI DALLA ZIA MILE.','TUTTI A TAVOLA!','CIAO PIUMI!','GRAZIE PIUMI!'],
   mile:['CIAO MACI!','VAI DALLO ZIO GIULIO.','LE GALLINE SONO SCAPPATE!','RIPORTALE NEL POLLAIO!','CORRI, MACI!','GRAZIE MACI!','PRENDI LE UOVA!','CHE BELLE UOVA!','FACCIAMO LA FRITTATA.','ECCO LA FRITTATA!','BRAVO MACI!','CIAO PIUMI!','CORRI, PIUMI!','GRAZIE PIUMI!','BRAVA PIUMI!'],
   simone:['CIAO MACI!','VAI DALLA ZIA SILVIA.','I MIEI ROBOTTINI SONO SCAPPATI!','MI AIUTI A PRENDERLI?','CORRI, MACI!','I MIEI ROBOTTINI!','GRAZIE MACI!','GUARDA IL COMPUTER!','CIAO PIUMI!','CORRI, PIUMI!','GRAZIE PIUMI!'],
-  silvia:['CIAO MACI!','SONO CADUTI I MIEI LIBRI!','TROVA 3 LIBRI!','CERCA BENE IN CASA!','ECCO I MIEI LIBRI!','GRAZIE MACI!','VAI DALLO ZIO SIMONE.','TUTTI SUL DIVANO!','VI LEGGO UNA STORIA.',"C'ERA UNA VOLTA DUE GATTINI: MACI E PIUMI!",'CIAO PIUMI!','GRAZIE PIUMI!']
+  silvia:['CIAO MACI!','SONO CADUTI I MIEI LIBRI!','TROVA 3 LIBRI!','CERCA BENE IN CASA!','ECCO I MIEI LIBRI!','GRAZIE MACI!','VAI DALLO ZIO SIMONE.','TUTTI SUL DIVANO!','VI LEGGO UNA STORIA.',"C'ERA UNA VOLTA DUE GATTINI: MACI E PIUMI!",'CIAO PIUMI!','GRAZIE PIUMI!'],
+  cecilia:['CIAO MACI!','ANDIAMO A FARE SURF!','SEGUI MARGHERITA SULLE ONDE!','PRENDI LE STELLINE!','CHE BELLE ONDE!','CIAO PIUMI!'],
+  andrea:['CIAO MACI!','CHE BRAVO SURFISTA!','ECCO IL GELATO!','CIAO PIUMI!','CHE BRAVA SURFISTA!']
 };
 let clip=null;
 function stopVoice(){try{speechSynthesis.cancel();}catch(e){}if(clip){clip.pause();clip=null;}}
@@ -270,7 +293,7 @@ function ttsSay(t,who){try{speechSynthesis.cancel();
   const p=VOX[who]||VOX.cat;u.pitch=p.pitch;u.rate=p.rate;speechSynthesis.speak(u);}catch(e){}}
 
 /* ---------- dialoghi ---------- */
-const NAMES={emma:'NONNA EMMA',girl:'MARGHERITA',luisa:'NONNA LUISA',gian:'NONNO GIAN',lucy:'NONNA LUCY',gianco:'NONNO GIANCO',giulio:'ZIO GIULIO',mile:'ZIA MILE',simone:'ZIO SIMONE',silvia:'ZIA SILVIA'};
+const NAMES={emma:'NONNA EMMA',girl:'MARGHERITA',luisa:'NONNA LUISA',gian:'NONNO GIAN',lucy:'NONNA LUCY',gianco:'NONNO GIANCO',giulio:'ZIO GIULIO',mile:'ZIA MILE',simone:'ZIO SIMONE',silvia:'ZIA SILVIA',cecilia:'MAMMA CECILIA',andrea:'PAPÀ ANDREA'};
 const PORTRAIT={
   emma:p=>{p.setTransform(2.6,0,0,2.6,0,0);drawCat(p,30,74,CATS.emma,{sit:true,f:1,t:0,noShadow:true});},
   girl:p=>{p.setTransform(2.4,0,0,2.4,0,0);drawGirl(p,38,148,{t:0,noShadow:true,crown:S.crown});},
@@ -281,7 +304,9 @@ const PORTRAIT={
   giulio:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,145,{kind:'giulio',noShadow:true});},
   mile:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'mile',noShadow:true});},
   simone:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,145,{kind:'simone',noShadow:true});},
-  silvia:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'silvia',noShadow:true});}
+  silvia:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'silvia',noShadow:true});},
+  cecilia:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'cecilia',noShadow:true});},
+  andrea:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'andrea',noShadow:true});}
 };
 function openDialog(who,pages,done){
   dlg={who,pages,i:0,done};target=null;music.volume=VOL*.35;
