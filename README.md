@@ -18,11 +18,12 @@ Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 - `build.sh`: unisce `src/` in `index.html` (GitHub Pages) e `missioni-nonna-emma.html`
 - `audio/`: musica e frasi dei personaggi
 - `copione-voci.md`: tutte le frasi, per registrare le voci
-- `genera-voce-margherita.sh`: genera nuove frasi con la voce di Margherita
+- `genera-voce-margherita.sh`: genera frasi nuove con una voce sintetica simile, se manca una registrazione
 
 ## Crediti
 - Musiche "Sunny Adventure", "Sunny Afternoon Tea" e "Sonniger Bergwiesen" create con [Suno](https://suno.com)
 - Voce di nonna Emma creata con [ElevenLabs](https://elevenlabs.io)
-- Voci di Margherita, nonna Luisa e nonno Gian: Microsoft Elsa, Isabella e Diego (sintesi neurale), generate con edge-tts
+- Voce di Margherita: registrata da Margherita (vocali originali in `audio/whatsapp/`)
+- Voci di nonna Luisa e nonno Gian: Microsoft Isabella e Diego (sintesi neurale), generate con edge-tts
 - Voci di nonna Lucy e nonno Gianco: Microsoft Elsa (tono più basso) e Diego, generate con edge-tts
 - Font: [Fredoka](https://fonts.google.com/specimen/Fredoka) (Google Fonts)
