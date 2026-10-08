@@ -6,7 +6,7 @@ Alla fine si registrano tutte insieme, così ogni personaggio ha sempre la stess
 ## Nonna Emma
 Voce: nonna italiana dolce e calma, parla lenta e chiara, sorride.
 
-### Livello 1 – Le missioni di nonna Emma
+### Livello 1 – Il giardino di nonna Emma
 - Ciao Maci!
 - Ciao Piumi!
 - Oggi è la festa di Margherita.
@@ -30,7 +30,7 @@ Voce: nonna italiana dolce e calma, parla lenta e chiara, sorride.
 ## Margherita
 Voce: bambina italiana di 6 anni, allegra ed emozionata, pronuncia chiara.
 
-### Livello 1 – Le missioni di nonna Emma
+### Livello 1 – Il giardino di nonna Emma
 - Ciao Maci!
 - Ciao Piumi!
 - Dov'è nonna Emma?
