@@ -41,6 +41,7 @@ Voce: registrata da Margherita (vocali WhatsApp convertiti in `m01`…`m12`).
 
 ### Livello 2 – A casa dei nonni
 - Aiuta i nonni!  (anche nel livello 3, con "Ciao Maci!")
+- Nei livelli 4 e 5 dice "Maci! Giochiamo?" o "Piumi! Giochiamo?"
 - Piumi! Giochiamo?
 - Prendi il gomitolo!
 - Andiamo a merenda!
@@ -115,8 +116,73 @@ Voce: nonno sorridente e tranquillo (ora: Microsoft Diego, tono un po' più bass
 - Tutti a merenda!
 - Con Piumi: Ciao Piumi! · Corri, Piumi! · Grazie Piumi!
 
+## Zio Giulio
+Voce: zio sorridente e tranquillo (ora: Microsoft Giuseppe, tono un po' più basso e lento). File `u01`…`u10`.
+
+### Livello 4 – In campagna dagli zii
+- Ciao Maci!
+- Mi aiuti nell'orto?
+- Raccogli tre carote!
+- Cerca le foglie grandi!
+- Che belle carote!
+- Grazie Maci!
+- Vai dalla zia Mile.
+- Tutti a tavola!
+- Con Piumi: Ciao Piumi! · Grazie Piumi!
+
+## Zia Mile
+Mile come Milena. Voce: zia allegra e sorridente (ora: Microsoft Isabella, ritmo un po' più lento). File `i01`…`i15`.
+
+### Livello 4 – In campagna dagli zii
+- Ciao Maci!
+- Vai dallo zio Giulio.
+- Le galline sono scappate!
+- Riportale nel pollaio!
+- Corri, Maci!
+- Grazie Maci!
+- Prendi le uova!
+- Che belle uova!
+- Facciamo la frittata.
+- Ecco la frittata!
+- Bravo Maci!
+- Con Piumi: Ciao Piumi! · Corri, Piumi! · Grazie Piumi! · Brava Piumi!
+
+## Zio Simone
+Voce: zio informatico, allegro (ora: Microsoft Diego, tono naturale). File `o01`…`o11`.
+
+### Livello 5 – A casa degli zii
+- Ciao Maci!
+- Vai dalla zia Silvia.
+- I miei robottini sono scappati!
+- Mi aiuti a prenderli?
+- Corri, Maci!
+- I miei robottini!
+- Grazie Maci!
+- Guarda il computer!
+- Con Piumi: Ciao Piumi! · Corri, Piumi! · Grazie Piumi!
+
+## Zia Silvia
+Voce: zia professoressa, dolce e chiara (ora: Microsoft Elsa, ritmo un po' più lento). File `s01`…`s12`.
+
+### Livello 5 – A casa degli zii
+- Ciao Maci!
+- Sono caduti i miei libri!
+- Trova tre libri!
+- Cerca bene in casa!
+- Ecco i miei libri!
+- Grazie Maci!
+- Vai dallo zio Simone.
+- Tutti sul divano!
+- Vi leggo una storia.
+- C'era una volta due gattini: Maci e Piumi!
+- Con Piumi: Ciao Piumi! · Grazie Piumi!
+
+Nota: con le voci sintetiche "Maci" va scritto "Màci", altrimenti a volte diventa "Macy".
+
 ## Musiche
 - Livello 1: tema del giardino (loop allegro, flauto, pizzicato, glockenspiel)
 - Festa finale: fanfara breve di vittoria
 - Livello 2: "Sunny Afternoon Tea" (Suno), tema calmo da casa dei nonni
 - Livello 3: "Sonniger Bergwiesen" (Suno), tema alpino allegro con fisarmonica e campanacci
+- Livello 4: "Farmyard Games" (Suno), tema di campagna con chitarra, mandolino e clarinetto
+- Livello 5: "Cozy Computer Corner" (Suno), tema accogliente con un po' di 8-bit

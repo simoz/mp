@@ -5,6 +5,8 @@ Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 1. **Il giardino di nonna Emma**: Maci e Piumi trovano tre margherite e un nastro e preparano una coroncina per Margherita.
 2. **A casa dei nonni**: Piumi aiuta nonna Luisa e nonno Gian a ritrovare occhiali e telecomando, gioca con il gomitolo e arriva la merenda.
 3. **In montagna dai nonni**: Maci raccoglie i mirtilli per la torta di nonna Lucy e riprende il cappello di nonno Gianco portato via dal vento.
+4. **In campagna dagli zii**: Maci raccoglie le carote nell'orto di zio Giulio, riporta nel pollaio le galline scappate a zia Mile e porta le uova per la frittata.
+5. **A casa degli zii**: Maci rimette a posto i libri di zia Silvia, acchiappa i tre robottini scappati dal mega computer di zio Simone e tutti ascoltano una storia sul divano.
 
 **Gioca:** https://simoz.github.io/mp/
 
@@ -14,16 +16,18 @@ Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 - La freccia gialla indica dove andare.
 
 ## File
-- `src/`: il codice (`engine.js` è il motore comune, `livello1.js`, `livello2.js` e `livello3.js` i livelli, `page.html` grafica e testi dell'interfaccia)
+- `src/`: il codice (`engine.js` è il motore comune, `livello1.js`, `livello2.js`…`livello5.js` i livelli, `page.html` grafica e testi dell'interfaccia)
 - `build.sh`: unisce `src/` in `index.html` (GitHub Pages) e `missioni-nonna-emma.html`
 - `audio/`: musica e frasi dei personaggi
 - `copione-voci.md`: tutte le frasi, per registrare le voci
 - `genera-voce-margherita.sh`: genera frasi nuove con una voce sintetica simile, se manca una registrazione
 
 ## Crediti
-- Musiche "Sunny Adventure", "Sunny Afternoon Tea" e "Sonniger Bergwiesen" create con [Suno](https://suno.com)
+- Musiche "Sunny Adventure", "Sunny Afternoon Tea", "Sonniger Bergwiesen", "Farmyard Games" e "Cozy Computer Corner" create con [Suno](https://suno.com)
 - Voce di nonna Emma creata con [ElevenLabs](https://elevenlabs.io)
 - Voce di Margherita: registrata da Margherita
 - Voci di nonna Luisa e nonno Gian: Microsoft Isabella e Diego (sintesi neurale), generate con edge-tts
 - Voci di nonna Lucy e nonno Gianco: Microsoft Elsa (tono più basso) e Diego, generate con edge-tts
+- Voci di zio Giulio e zia Mile: Microsoft Giuseppe e Isabella, generate con edge-tts
+- Voci di zio Simone e zia Silvia: Microsoft Diego ed Elsa, generate con edge-tts
 - Font: [Fredoka](https://fonts.google.com/specimen/Fredoka) (Google Fonts)
