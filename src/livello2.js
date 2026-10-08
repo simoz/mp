@@ -182,8 +182,8 @@ function wallBlocked(x,y){
 }
 
 LEVELS.push({
-  name:'A casa dei nonni',ww:WW,wh:WH,bg:'#c58a55',party:['piumi'],music:'audio/stage2.mp3',
-  start:{p:{x:560,y:380}},
+  name:'A casa dei nonni',ww:WW,wh:WH,bg:'#c58a55',party:['piumi','maci'],locked:true,music:'audio/stage2.mp3',
+  start:{p:{x:560,y:380},q:{x:520,y:400}},
   quests:['VAI DA NONNA LUISA','TROVA GLI OCCHIALI DELLA NONNA','PORTA GLI OCCHIALI ALLA NONNA','VAI DA NONNO GIAN','CERCA SOTTO IL DIVANO','PORTA IL TELECOMANDO AL NONNO','VAI DA MARGHERITA','PRENDI IL GOMITOLO','TUTTI A MERENDA!','MERENDA!'],
   fresh:()=>({searched:0,spots:SPOTS.map(s=>({...s,done:false})),luisaGlasses:false,gianHead:true,carry:null,merenda:false,
     ball:{x:0,y:0,vx:0,vy:0,rot:0,on:false},npc:{luisa:{x:640,y:300},girl:{x:470,y:560},gian:{x:205,y:398}}}),

@@ -231,7 +231,7 @@ function nearest(list,yoff){let best=null,bd=1e9;list.forEach(o=>{const d=Math.h
 function updateHUD(){
   document.getElementById('questText').textContent=L.quests[S.state];
   document.getElementById('questProg').innerHTML=L.progress?L.progress():'';
-  ['maci','piumi'].forEach(k=>{const b=document.getElementById(k=='maci'?'bMaci':'bPiumi');b.hidden=!L.party.includes(k);b.classList.toggle('on',S.cur==k);});
+  ['maci','piumi'].forEach(k=>{const b=document.getElementById(k=='maci'?'bMaci':'bPiumi');b.hidden=!L.party.includes(k)||(L.locked&&S.cur!=k);b.classList.toggle('on',S.cur==k);});
 }
 
 /* ---------- input ---------- */
@@ -243,7 +243,7 @@ addEventListener('keydown',e=>{
   if(dlg&&(e.key=='Enter'||e.key==' ')){e.preventDefault();nextPage();return;}
   keys[e.key.toLowerCase()]=true;if(e.key.startsWith('Arrow'))e.preventDefault();});
 addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);
-function switchTo(k){if(S.cur==k||!L.party.includes(k))return;S.cur=k;const a={...S.p};S.p.x=S.q.x;S.p.y=S.q.y;S.q.x=a.x;S.q.y=a.y;trail=[];target=null;sfx.meow();floatText(S.p.x,S.p.y-80,CATS[k].name+'!');updateHUD();}
+function switchTo(k){if(S.cur==k||!L.party.includes(k)||L.locked)return;S.cur=k;const a={...S.p};S.p.x=S.q.x;S.p.y=S.q.y;S.q.x=a.x;S.q.y=a.y;trail=[];target=null;sfx.meow();floatText(S.p.x,S.p.y-80,CATS[k].name+'!');updateHUD();}
 document.getElementById('bMaci').onclick=()=>switchTo('maci');
 document.getElementById('bPiumi').onclick=()=>switchTo('piumi');
 document.getElementById('bMus').onclick=()=>setMusic(!musicOn);
