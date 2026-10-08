@@ -930,13 +930,24 @@ function drawSky(c){
   mountain(c,180,250,440,170,'#a9bdd6');mountain(c,880,250,480,190,'#a9bdd6');
   mountain(c,520,250,500,225,'#8ea6c4');mountain(c,1150,250,420,165,'#8ea6c4');
 }
+const hw=y=>y<300?14+(y-248)*26/52:40;  /* il ruscello si allarga scendendo */
+function drawWaterfall(c){
+  const x=sx(248);
+  c.beginPath();c.moveTo(x-6,156);c.lineTo(x+6,156);c.lineTo(x+11,252);c.lineTo(x-11,252);c.closePath();fs(c,'#8fd6f5',2.5);
+  c.strokeStyle='#fff';c.lineWidth=2.5;
+  for(let i=0;i<5;i++){const y=162+((i*23+(RM?0:T*70))%80);c.beginPath();c.moveTo(x-4+(i%2)*7,y);c.lineTo(x-4+(i%2)*7,y+12);c.stroke();}
+  [[-11,158,9,6],[10,160,8,5]].forEach(([d,y,rx,ry])=>{E(c,x+d,y,rx,ry);fs(c,'#b9b3a8',2.2);});
+}
 function drawStream(c){
-  c.beginPath();for(let y=225;y<=WH;y+=15)c.lineTo(sx(y)-40,y);for(let y=WH;y>=225;y-=15)c.lineTo(sx(y)+40,y);c.closePath();
+  c.beginPath();for(let y=248;y<=WH;y+=13)c.lineTo(sx(y)-hw(y),y);for(let y=WH;y>=248;y-=13)c.lineTo(sx(y)+hw(y),y);c.closePath();
   c.fillStyle='#4fb6e0';c.fill();c.lineWidth=3;c.strokeStyle=OL;c.stroke();
-  c.beginPath();for(let y=225;y<=WH;y+=15)c.lineTo(sx(y)-22,y);for(let y=WH;y>=225;y-=15)c.lineTo(sx(y)+18,y);c.closePath();c.fillStyle='#74cbee';c.fill();
+  c.beginPath();for(let y=252;y<=WH;y+=13)c.lineTo(sx(y)-hw(y)*.55,y);for(let y=WH;y>=252;y-=13)c.lineTo(sx(y)+hw(y)*.45,y);c.closePath();c.fillStyle='#74cbee';c.fill();
   c.strokeStyle='#e6f7ff';c.lineWidth=2.5;
-  for(let i=0;i<16;i++){const y=262+((i*53+(RM?0:T*40))%(WH-262)),x=sx(y)+((i*17)%30-15);c.beginPath();c.moveTo(x-7,y);c.quadraticCurveTo(x,y-5,x+7,y);c.stroke();}
-  [[300,-1],[430,1],[700,-1],[820,1],[380,1],[760,-1]].forEach(([y,d])=>{E(c,sx(y)+d*44,y,10,6);fs(c,'#b9b3a8',2.2);});
+  for(let i=0;i<16;i++){const y=290+((i*53+(RM?0:T*40))%(WH-290)),x=sx(y)+((i*17)%30-15);c.beginPath();c.moveTo(x-7,y);c.quadraticCurveTo(x,y-5,x+7,y);c.stroke();}
+  const x0=sx(250);
+  c.fillStyle='#fff';[[-8,262,6],[0,266,7],[8,262,6],[-3,274,4],[5,276,4]].forEach(([d,y,r])=>{C(c,x0+d+(RM?0:Math.sin(T*6+d)*1.5),y,r);c.fill();});
+  [[-26,252,14,9],[24,254,13,8],[-38,264,9,6]].forEach(([d,y,rx,ry])=>{E(c,x0+d,y,rx,ry);fs(c,'#b9b3a8',2.5);});
+  [[330,-1],[430,1],[700,-1],[820,1],[380,1],[760,-1]].forEach(([y,d])=>{E(c,sx(y)+d*43,y,9,5);fs(c,'#b9b3a8',2.2);});
 }
 function drawHills(c){
   c.beginPath();c.moveTo(0,262);
@@ -1147,9 +1158,9 @@ LEVELS.push({
   },
   carry(c,x,y){const b=RM?0:Math.sin(T*5)*3;if(S.state==2)drawBerries(c,x+6,y-84-b);else if(S.carry=='cappello'&&S.state==5)alpineHat(c,x+6,y-82-b,1);},
   drawBack(c){
-    drawSky(c);
+    drawSky(c);drawWaterfall(c);
     c.fillStyle='#9ad66f';c.fillRect(0,252,WW,WH-252);
-    drawStream(c);drawHills(c);
+    drawHills(c);drawStream(c);
     c.strokeStyle='#7fbf55';c.lineWidth=2;tufts.forEach(([x,y])=>{c.beginPath();c.moveTo(x-4,y-5);c.lineTo(x,y);c.lineTo(x+4,y-6);c.stroke();});
     flowers.forEach(([x,y,k])=>drawFlower(c,x,y,k));
     c.beginPath();c.moveTo(250,368);c.quadraticCurveTo(300,470,480,470);c.quadraticCurveTo(560,470,sx(563)-60,563);c.strokeStyle='#d8c08a';c.lineWidth=34;c.stroke();
