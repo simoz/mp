@@ -240,5 +240,5 @@ Con questa voce "Ciao Maci" va scritto "Ciao, Màci!", altrimenti diventa "Ciao 
 - Livello 5: "Cozy Computer Corner" (Suno), tema accogliente con un po' di 8-bit
 - Livello 6: "Sunny Surf Party" (Suno), surf rock allegro con chitarra e ukulele
 - Livello 7: "Garden Bubble Dance" (Suno)
-- Livello 8: per ora riusa "Sunny Adventure" del livello 1
+- Livello 8: "Backyard Games" (Suno)
 - Schermata iniziale: "Meow" (Suno)

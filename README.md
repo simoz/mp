@@ -29,7 +29,7 @@ Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 - `genera-voce-margherita.sh`: genera frasi nuove con una voce sintetica simile, se manca una registrazione
 
 ## Crediti
-- Musiche "Sunny Adventure", "Sunny Afternoon Tea", "Sonniger Bergwiesen", "Farmyard Games", "Cozy Computer Corner", "Sunny Surf Party", "Garden Bubble Dance" (sapone) e "Meow" (schermata iniziale) create con [Suno](https://suno.com)
+- Musiche "Sunny Adventure", "Sunny Afternoon Tea", "Sonniger Bergwiesen", "Farmyard Games", "Cozy Computer Corner", "Sunny Surf Party", "Garden Bubble Dance" (sapone), "Backyard Games" (Rebecca) e "Meow" (schermata iniziale) create con [Suno](https://suno.com)
 - Voce di nonna Emma creata con [ElevenLabs](https://elevenlabs.io)
 - Voce di Margherita: registrata da Margherita
 - Voci di nonna Luisa e nonno Gian: Microsoft Isabella e Diego (sintesi neurale), generate con edge-tts
