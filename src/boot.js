@@ -15,4 +15,4 @@ function start(data){
 }
 window.claude?.hot?.snapshot?.(()=>({S}));
 window.claude?.hot?.ready?window.claude.hot.ready(start):start(window.claude?.hot?.data??{});
-if(location.hash=='#debug')window.__gioco={get S(){return S;},setState,play};
+if(location.hash=='#debug')window.__gioco={get S(){return S;},get music(){return music;},setState,play};

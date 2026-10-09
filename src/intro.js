@@ -12,9 +12,15 @@ const INTRO=[
   {sky:'#a8dcf6',ground:'#9ad66f',draw:introRebecca}
 ];
 let introX=0;
+/* la musica dell'intro si scarica tutta subito (i telefoni da soli la scaricano solo dopo il tocco),
+   così al primo tocco parte senza aspettare */
+let introURL=INTRO_MUSIC;
+const isIntro=()=>music.src===introURL||music.src.endsWith(INTRO_MUSIC);
+try{fetch(INTRO_MUSIC).then(r=>r.ok?r.blob():null).then(b=>{if(!b)return;
+  const was=isIntro()&&music.paused;introURL=URL.createObjectURL(b);if(was)music.src=introURL;}).catch(()=>{});}catch(e){}
 function introMusicStart(){
   if(!musicOn||(S&&S.started))return;
-  if(!music.src.endsWith(INTRO_MUSIC))music.src=INTRO_MUSIC;
+  if(music.src!==introURL&&(music.paused||!isIntro()))music.src=introURL;
   music.play().catch(()=>{});
 }
 /* i browser fanno partire la musica solo dopo un gesto: sui telefoni conta quando il dito si stacca */
