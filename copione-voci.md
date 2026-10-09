@@ -40,6 +40,7 @@ Voce: registrata da Margherita (vocali WhatsApp convertiti in `m01`…`m12`).
 - Che bella coroncina!
 
 ### Livello 2 – A casa dei nonni
+- Nel livello 7 dice "Ciao Maci!" e alla fine "Grazie! Vi voglio bene!"
 - Aiuta i nonni!  (anche nel livello 3, con "Ciao Maci!")
 - Nei livelli 4, 5 e 6 dice "Maci! Giochiamo?" o "Piumi! Giochiamo?"
 - Piumi! Giochiamo?
@@ -189,13 +190,25 @@ Voce: mamma allegra e sportiva (ora: Microsoft Isabella, tono più alto). File `
 - Con Piumi: Ciao Piumi!
 
 ## Papà Andrea
-Voce: papà sorridente e tranquillo (ora: Microsoft Giuseppe). File `a01`…`a05`.
+Voce: papà sorridente e tranquillo (ora: Microsoft Giuseppe). File `a01`…`a16`.
 
 ### Livello 6 – Surf al mare
 - Ciao Maci!
 - Che bravo surfista!
 - Ecco il gelato!
 - Con Piumi: Ciao Piumi! · Che brava surfista!
+
+### Livello 7 – Il sapone
+- Facciamo il sapone con Margherita!
+- Trova olio, lavanda e miele!
+- Portali al pentolone!
+- Che bel profumo!
+- Grazie Maci!
+- Oh! Le bolle sono scappate!
+- Scoppia le bolle!
+- Ecco il sapone!
+- Bravo Maci!
+- Con Piumi: Ciao Piumi! · Grazie Piumi! · Brava Piumi!
 
 Nota: con le voci sintetiche "Maci" va scritto "Màci", altrimenti a volte diventa "Macy".
 
@@ -207,3 +220,5 @@ Nota: con le voci sintetiche "Maci" va scritto "Màci", altrimenti a volte diven
 - Livello 4: "Farmyard Games" (Suno), tema di campagna con chitarra, mandolino e clarinetto
 - Livello 5: "Cozy Computer Corner" (Suno), tema accogliente con un po' di 8-bit
 - Livello 6: "Sunny Surf Party" (Suno), surf rock allegro con chitarra e ukulele
+- Livello 7: "Garden Bubble Dance" (Suno)
+- Schermata iniziale: "Meow" (Suno)

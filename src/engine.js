@@ -253,7 +253,7 @@ const VOL=.35;music.volume=VOL;
 let musicOn=true;try{musicOn=localStorage.getItem('musica')!=='no';}catch(e){}
 function setMusic(on){musicOn=on;try{localStorage.setItem('musica',on?'si':'no');}catch(e){}
   const b=document.getElementById('bMus');b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);
-  if(on&&S&&S.started)music.play().catch(()=>{});else music.pause();}
+  if(on&&S&&S.started)music.play().catch(()=>{});else if(on&&S)introMusicStart();else music.pause();}
 
 /* ---------- voci ---------- */
 let voices=[],chosen=null;
@@ -280,7 +280,8 @@ const LINES={
   simone:['CIAO MACI!','VAI DALLA ZIA SILVIA.','I MIEI ROBOTTINI SONO SCAPPATI!','MI AIUTI A PRENDERLI?','CORRI, MACI!','I MIEI ROBOTTINI!','GRAZIE MACI!','GUARDA IL COMPUTER!','CIAO PIUMI!','CORRI, PIUMI!','GRAZIE PIUMI!'],
   silvia:['CIAO MACI!','SONO CADUTI I MIEI LIBRI!','TROVA 3 LIBRI!','CERCA BENE IN CASA!','ECCO I MIEI LIBRI!','GRAZIE MACI!','VAI DALLO ZIO SIMONE.','TUTTI SUL DIVANO!','VI LEGGO UNA STORIA.',"C'ERA UNA VOLTA DUE GATTINI: MACI E PIUMI!",'CIAO PIUMI!','GRAZIE PIUMI!'],
   cecilia:['CIAO MACI!','ANDIAMO A FARE SURF!','SEGUI MARGHERITA SULLE ONDE!','PRENDI LE STELLINE!','CHE BELLE ONDE!','CIAO PIUMI!'],
-  andrea:['CIAO MACI!','CHE BRAVO SURFISTA!','ECCO IL GELATO!','CIAO PIUMI!','CHE BRAVA SURFISTA!']
+  andrea:['CIAO MACI!','CHE BRAVO SURFISTA!','ECCO IL GELATO!','CIAO PIUMI!','CHE BRAVA SURFISTA!',
+    'FACCIAMO IL SAPONE CON MARGHERITA!','TROVA OLIO, LAVANDA E MIELE!','PORTALI AL PENTOLONE!','CHE BEL PROFUMO!','GRAZIE MACI!','GRAZIE PIUMI!','OH! LE BOLLE SONO SCAPPATE!','SCOPPIA LE BOLLE!','ECCO IL SAPONE!','BRAVO MACI!','BRAVA PIUMI!']
 };
 let clip=null;
 function stopVoice(){try{speechSynthesis.cancel();}catch(e){}if(clip){clip.pause();clip=null;}}
@@ -309,6 +310,7 @@ const PORTRAIT={
   andrea:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'andrea',noShadow:true});}
 };
 function openDialog(who,pages,done){
+  if(!S.started)return;
   dlg={who,pages,i:0,done};target=null;music.volume=VOL*.35;
   document.getElementById('dlg').hidden=false;
   document.getElementById('dName').textContent=NAMES[who];
@@ -372,7 +374,12 @@ function play(i){
 }
 document.getElementById('again').onclick=()=>play(S.lvl);
 document.getElementById('next').onclick=()=>play(Math.min(S.lvl+1,LEVELS.length-1));
-document.getElementById('menu').onclick=()=>{document.getElementById('end').hidden=true;document.getElementById('start').hidden=false;music.pause();S.started=false;};
+function toMenu(){
+  if(dlg){dlg=null;document.getElementById('dlg').hidden=true;music.volume=VOL;}
+  stopVoice();endTimer=0;target=null;keys={};
+  document.getElementById('end').hidden=true;document.getElementById('start').hidden=false;S.started=false;music.pause();introMusicStart();}
+document.getElementById('menu').onclick=toMenu;
+document.getElementById('bBack').onclick=toMenu;
 function showEnd(){
   document.getElementById('endRibbon').textContent='LIVELLO '+(S.lvl+1)+' COMPLETATO';
   document.getElementById('endText').textContent=S.done;
@@ -410,7 +417,9 @@ function update(dt){
 }
 
 /* ---------- disegno ---------- */
-function render(){
+function render(dt){
+  if(!S.started){document.body.classList.add('menu');drawIntro(dt||0);return;}
+  document.body.classList.remove('menu');
   const cam=camera(),c=ctx;
   c.setTransform(DPR,0,0,DPR,0,0);c.fillStyle=L.bg;c.fillRect(0,0,VW,VH);
   c.setTransform(DPR*Z,0,0,DPR*Z,-cam.x*DPR*Z,-cam.y*DPR*Z);

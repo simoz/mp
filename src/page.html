@@ -17,7 +17,7 @@ body{margin:0;overflow:hidden;background:var(--grass);color:var(--ink);font-fami
 button{font-family:var(--display);color:var(--ink);cursor:pointer}
 button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .panel{background:var(--paper);border:3px solid var(--ink);border-radius:16px;box-shadow:0 5px 0 var(--ink)}
-.quest{position:fixed;left:12px;top:calc(12px + env(safe-area-inset-top,0px));padding:10px 14px 10px;max-width:min(360px,calc(100% - 240px));display:flex;flex-direction:column;gap:6px}
+.quest{position:fixed;left:12px;top:calc(12px + env(safe-area-inset-top,0px));padding:10px 14px 10px;max-width:min(360px,calc(100% - 320px));display:flex;flex-direction:column;gap:6px}
 .tag{align-self:flex-start;background:var(--red);color:#fff;font-weight:600;font-size:13px;letter-spacing:.08em;padding:2px 10px;border-radius:99px;border:2px solid var(--ink)}
 #questText{font-weight:700;font-size:clamp(17px,2.6vw,24px);line-height:1.15;letter-spacing:.02em;text-wrap:balance}
 #questProg{display:flex;gap:6px}
@@ -58,7 +58,13 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .link{background:none;border:0;font-weight:600;font-size:15px;color:var(--muted);text-decoration:underline;padding:4px}
 .stars{display:flex;gap:6px}
 .stars svg{width:52px;height:52px}
-@media (max-width:520px){.pic{width:64px;height:64px}.dialog{gap:10px;padding:10px}.btn{font-size:18px;padding:6px 12px}.pc canvas,.pc.mus svg{width:42px;height:42px}.quest{max-width:calc(100% - 215px)}}
+@media (max-width:520px){.pic{width:64px;height:64px}.dialog{gap:10px;padding:10px}.btn{font-size:18px;padding:6px 12px}.pc canvas,.pc.mus svg{width:42px;height:42px}.quest{max-width:calc(100% - 270px)}.party{gap:6px}}
+body.menu .quest,body.menu #bBack,body.menu #bMaci,body.menu #bPiumi{display:none}
+body.menu .party{z-index:2}
+#start{background:rgba(40,25,45,.12);place-items:start center;padding-top:max(28px,4vh);overflow:auto}
+#start .card{max-width:600px;padding:26px 22px 20px}
+#start .levels{grid-template-columns:1fr 1fr}#start .lvl:last-child{grid-column:1/-1;justify-self:center;min-width:50%}
+@media (max-width:639px){#start{padding-top:calc(78px + env(safe-area-inset-top,0px))}#start .card{padding:22px 12px 14px;gap:6px}#start .card p{display:none}#start .card h1{font-size:30px}#start .levels{gap:8px}#start .lvl{gap:8px;padding:7px 8px}#start .lvl b{width:30px;height:30px;font-size:17px}#start .lvl span{font-size:15px}}
 @media (prefers-reduced-motion:reduce){.pc{transition:none}}
 </style>
 
@@ -71,6 +77,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 </div>
 
 <div class="party">
+  <button class="pc mus" id="bBack" aria-label="Torna ai livelli"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>LIVELLI</button>
   <button class="pc on" id="bMaci" aria-label="Gioca con Maci"><canvas width="104" height="104"></canvas>MACI</button>
   <button class="pc" id="bPiumi" aria-label="Gioca con Piumi"><canvas width="104" height="104"></canvas>PIUMI</button>
   <button class="pc mus on" id="bMus" aria-label="Accendi o spegni la musica" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="3" fill="currentColor"/><circle cx="17.5" cy="16" r="3" fill="currentColor"/><path class="x" d="M3 3l18 18" stroke="#e5533d" stroke-width="3" stroke-linecap="round"/></svg>MUSICA</button>
