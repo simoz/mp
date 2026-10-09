@@ -212,6 +212,25 @@ Voce: papà sorridente e tranquillo (ora: Microsoft Giuseppe). File `a01`…`a16
 
 Nota: con le voci sintetiche "Maci" va scritto "Màci", altrimenti a volte diventa "Macy".
 
+## Rebecca
+La cuginetta di Margherita. Voce: ragazzina allegra (ora: Microsoft Elsa, +25Hz, +5%). File `r01`…`r15`.
+Con questa voce "Ciao Maci" va scritto "Ciao, Màci!", altrimenti diventa "Ciao Machi".
+
+### Livello 8 – A giocare da Rebecca
+- Ciao Maci!
+- Sono spariti tutti i giochi!
+- Mi aiuti a trovarli?
+- Cerca l'orsetto nelle ceste!
+- Il mio orsetto!
+- Grazie Maci!
+- Trova tre pezzi del puzzle!
+- Che bello il puzzle!
+- Manca la palla!
+- Spingi la palla fino a noi!
+- Bravo Maci!
+- Adesso giochiamo tutti insieme!
+- Con Piumi: Ciao Piumi! · Grazie Piumi! · Brava Piumi!
+
 ## Musiche
 - Livello 1: tema del giardino (loop allegro, flauto, pizzicato, glockenspiel)
 - Festa finale: fanfara breve di vittoria
@@ -221,4 +240,5 @@ Nota: con le voci sintetiche "Maci" va scritto "Màci", altrimenti a volte diven
 - Livello 5: "Cozy Computer Corner" (Suno), tema accogliente con un po' di 8-bit
 - Livello 6: "Sunny Surf Party" (Suno), surf rock allegro con chitarra e ukulele
 - Livello 7: "Garden Bubble Dance" (Suno)
+- Livello 8: per ora riusa "Sunny Adventure" del livello 1
 - Schermata iniziale: "Meow" (Suno)

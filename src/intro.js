@@ -8,7 +8,8 @@ const INTRO=[
   {sky:'#8fd0f5',ground:'#9ad66f',draw:introFarm},
   {sky:'#cfe3f2',ground:'#b5d98a',draw:introZii},
   {sky:'#7cc8f0',ground:'#f2d9a0',draw:introSea},
-  {sky:'#bfe6fa',ground:'#98d26c',draw:introSoap}
+  {sky:'#bfe6fa',ground:'#98d26c',draw:introSoap},
+  {sky:'#a8dcf6',ground:'#9ad66f',draw:introRebecca}
 ];
 let introX=0;
 function introMusicStart(){
@@ -16,8 +17,8 @@ function introMusicStart(){
   if(!music.src.endsWith(INTRO_MUSIC))music.src=INTRO_MUSIC;
   music.play().catch(()=>{});
 }
-addEventListener('pointerdown',()=>{if(S&&!S.started)introMusicStart();});
-addEventListener('keydown',()=>{if(S&&!S.started)introMusicStart();});
+/* i browser fanno partire la musica solo dopo un gesto: sui telefoni conta quando il dito si stacca */
+['pointerup','touchend','click','keydown'].forEach(ev=>addEventListener(ev,()=>{if(S&&!S.started&&music.paused)introMusicStart();},true));
 
 /* ---------- i posti ---------- */
 function sign(c,x,n){
@@ -86,6 +87,13 @@ function introSoap(c,x){
   drawGirl(c,x+420,WALK-40,{t:T,wave:true});
   for(let k=0;k<7;k++){const ph=RM?k/7:(T*.25+k/7)%1,bx=x+440+Math.sin(ph*9+k)*60+k*20,by=WALK-150-ph*260;
     c.globalAlpha=Math.min(1,(1-ph)*3);C(c,bx,by,10+k%3*4);c.fillStyle='rgba(190,230,255,.5)';c.fill();c.lineWidth=2.4;c.strokeStyle='rgba(70,120,190,1)';c.stroke();c.globalAlpha=1;}
+}
+
+function introRebecca(c,x){
+  miniHouse(c,x+330,HZ+110,'#f6d6dc','#7a5aa8','#ffd23d');
+  rr(c,x+440,WALK-60,200,60,10);fs(c,'#fff4dc',2.4);[0,1,2,3,4,5,6].forEach(k=>{c.fillStyle=FCOL[k%4];c.globalAlpha=.55;c.fillRect(x+446+k*27,WALK-57,13,54);c.globalAlpha=1;});
+  const by=WALK-30-(RM?0:Math.abs(Math.sin(T*3))*30);C(c,x+600,by,15);fs(c,'#fff',2.4);c.save();C(c,x+600,by,15);c.clip();c.fillStyle='#e5533d';c.fillRect(x+585,by-5,30,10);c.restore();
+  drawGirl(c,x+200,WALK-40,{t:T,rebecca:true,wave:true});
 }
 
 /* ---------- disegno ---------- */

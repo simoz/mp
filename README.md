@@ -9,6 +9,7 @@ Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 5. **A casa degli zii**: Maci rimette a posto i libri di zia Silvia, acchiappa i tre robottini scappati dal mega computer di zio Simone e tutti ascoltano una storia sul divano.
 6. **Surf al mare**: Maci segue Margherita e mamma Cecilia sulle onde raccogliendo le stelline, poi papà Andrea aspetta tutti sotto l'ombrellone con il gelato.
 7. **Il sapone**: Maci e Piumi trovano olio d'oliva, lavanda e miele per il sapone di papà Andrea e Margherita, poi scoppiano le bolle scappate dal pentolone.
+8. **A giocare da Rebecca**: dalla cuginetta Rebecca sono spariti tutti i giochi. Maci e Piumi ritrovano l'orsetto nelle ceste e i pezzi del puzzle, e spingono la palla fino alla coperta dove giocano Margherita e Rebecca.
 
 **Gioca:** https://simoz.github.io/mp/
 
@@ -21,7 +22,7 @@ Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 - Il pulsante LIVELLI in alto a destra torna alla scelta dei livelli.
 
 ## File
-- `src/`: il codice (`engine.js` è il motore comune, `livello1.js`, `livello2.js`…`livello7.js`, `intro.js` la sfilata della schermata iniziale i livelli, `page.html` grafica e testi dell'interfaccia)
+- `src/`: il codice (`engine.js` è il motore comune, `livello1.js`, `livello2.js`…`livello8.js`, `intro.js` la sfilata della schermata iniziale i livelli, `page.html` grafica e testi dell'interfaccia)
 - `build.sh`: unisce `src/` in `index.html` (GitHub Pages) e `missioni-nonna-emma.html`
 - `audio/`: musica e frasi dei personaggi
 - `copione-voci.md`: tutte le frasi, per registrare le voci
@@ -35,5 +36,6 @@ Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 - Voci di nonna Lucy e nonno Gianco: Microsoft Elsa (tono più basso) e Diego, generate con edge-tts
 - Voci di zio Giulio e zia Mile: Microsoft Giuseppe e Isabella, generate con edge-tts
 - Voci di zio Simone e zia Silvia: Microsoft Diego ed Elsa, generate con edge-tts
+- Voce di Rebecca: Microsoft Elsa (tono più alto, +25Hz), generata con edge-tts
 - Voci di mamma Cecilia e papà Andrea: Microsoft Isabella (tono più alto) e Giuseppe, generate con edge-tts (Giuseppe: velocità -4%, tono -10Hz)
 - Font: [Fredoka](https://fonts.google.com/specimen/Fredoka) (Google Fonts)

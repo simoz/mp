@@ -80,27 +80,40 @@ function drawCat(c,x,y,cat,o){
 function daisy(c,x,y,r,rot){for(let i=0;i<8;i++){const a=i/8*TAU+(rot||0);E(c,x+Math.cos(a)*r*.62,y+Math.sin(a)*r*.62,r*.5,r*.24,a);c.fillStyle='#fff';c.fill();c.lineWidth=1.4;c.strokeStyle=OL;c.stroke();}
   C(c,x,y,r*.36);fs(c,'#f6c830',1.4);}
 
+/* Margherita; con o.rebecca la cuginetta Rebecca: capelli scuri raccolti, occhiali bianchi, maglietta gialla */
 function drawGirl(c,x,y,o){
-  c.save();c.translate(x,y);c.lineJoin='round';c.lineCap='round';const t=o.t||0,SK='#f8d5bd',HR='#6b4226';
+  const rb=o.rebecca;
+  c.save();c.translate(x,y);c.lineJoin='round';c.lineCap='round';const t=o.t||0,SK='#f8d5bd',HR=rb?'#3a2519':'#6b4226';
+  if(rb){c.scale(1.08,1.08);}
   if(!o.noShadow){E(c,0,0,22,6);c.fillStyle='rgba(40,30,40,.18)';c.fill();}
   rr(c,-9,-40,7,37,3);fs(c,SK,2.5);rr(c,2,-40,7,37,3);fs(c,SK,2.5);
-  E(c,-6,-3,7,4);fs(c,'#e85a5a',2.5);E(c,6,-3,7,4);fs(c,'#e85a5a',2.5);
-  rr(c,-12,-52,24,15,4);fs(c,'#5a7fc0',2.5);
+  E(c,-6,-3,7,4);fs(c,rb?'#f4f4f4':'#e85a5a',2.5);E(c,6,-3,7,4);fs(c,rb?'#f4f4f4':'#e85a5a',2.5);
+  rr(c,-12,-52,24,15,4);fs(c,rb?'#4a6fa8':'#5a7fc0',2.5);
   const wave=o.wave&&!RM?Math.sin(t*7)*6:0;
   const arm=(x1,y1,x2,y2)=>{c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.strokeStyle=OL;c.lineWidth=10;c.stroke();c.strokeStyle=SK;c.lineWidth=6;c.stroke();};
   arm(-11,-80,-17,-52);
   if(o.wave)arm(11,-80,22+wave,-100);else arm(11,-80,17,-52);
-  rr(c,-13,-84,26,36,7);fs(c,'#5cbf60',2.8);
-  c.save();rr(c,-13,-84,26,36,7);c.clip();c.fillStyle='#48a04c';c.fillRect(5,-84,10,36);c.restore();rr(c,-13,-84,26,36,7);c.lineWidth=2.8;c.strokeStyle=OL;c.stroke();
-  daisy(c,0,-67,7);
+  rr(c,-13,-84,26,36,7);fs(c,rb?'#ffd23d':'#5cbf60',2.8);
+  c.save();rr(c,-13,-84,26,36,7);c.clip();c.fillStyle=rb?'#f2bd1d':'#48a04c';c.fillRect(5,-84,10,36);
+  if(rb){c.fillStyle=SK;c.beginPath();c.moveTo(-6,-84);c.quadraticCurveTo(0,-74,6,-84);c.closePath();c.fill();}
+  c.restore();rr(c,-13,-84,26,36,7);c.lineWidth=2.8;c.strokeStyle=OL;c.stroke();
+  if(!rb)daisy(c,0,-67,7);
   rr(c,-3,-90,6,8,2);c.fillStyle=SK;c.fill();
-  c.beginPath();c.moveTo(-21,-89);c.lineTo(-21,-104);c.arc(0,-104,21,Math.PI,0);c.lineTo(21,-89);c.lineTo(11,-89);c.lineTo(7,-97);c.lineTo(-7,-97);c.lineTo(-11,-89);c.closePath();fs(c,HR,2.8);
-  c.strokeStyle='#9a6a40';c.lineWidth=1.6;[[-17,-100,-17,-91],[17,-100,17,-91]].forEach(([a,b,d,e])=>{c.beginPath();c.moveTo(a,b);c.lineTo(d,e);c.stroke();});
+  if(rb){C(c,-4,-122,9);fs(c,HR,2.5);c.beginPath();c.arc(-4,-122,5,.5,2.4);c.strokeStyle='#5a3a28';c.lineWidth=1.6;c.stroke();}
+  else{c.beginPath();c.moveTo(-21,-89);c.lineTo(-21,-104);c.arc(0,-104,21,Math.PI,0);c.lineTo(21,-89);c.lineTo(11,-89);c.lineTo(7,-97);c.lineTo(-7,-97);c.lineTo(-11,-89);c.closePath();fs(c,HR,2.8);
+  c.strokeStyle='#9a6a40';c.lineWidth=1.6;[[-17,-100,-17,-91],[17,-100,17,-91]].forEach(([a,b,d,e])=>{c.beginPath();c.moveTo(a,b);c.lineTo(d,e);c.stroke();});}
   C(c,0,-102,15);fs(c,SK,2.8);
-  c.beginPath();c.moveTo(-16,-101);c.quadraticCurveTo(-17,-121,0,-121);c.quadraticCurveTo(17,-121,16,-101);c.quadraticCurveTo(9,-110,3,-106);c.quadraticCurveTo(-6,-112,-16,-101);fs(c,HR,2.5);
-  c.beginPath();c.moveTo(-8,-116);c.quadraticCurveTo(0,-120,7,-117);c.strokeStyle='#9a6a40';c.lineWidth=2;c.stroke();
+  if(rb){c.beginPath();c.moveTo(-15.5,-98);c.quadraticCurveTo(-17,-120,0,-120);c.quadraticCurveTo(17,-120,15.5,-98);c.quadraticCurveTo(12,-111,1,-112);c.quadraticCurveTo(-11,-111,-15.5,-98);fs(c,HR,2.5);
+    c.beginPath();c.moveTo(-14,-104);c.quadraticCurveTo(-19,-96,-15,-88);c.strokeStyle=HR;c.lineWidth=2.4;c.stroke();
+    c.beginPath();c.moveTo(-9,-116);c.quadraticCurveTo(-2,-119,6,-116);c.strokeStyle='#5a3a28';c.lineWidth=1.8;c.stroke();}
+  else{c.beginPath();c.moveTo(-16,-101);c.quadraticCurveTo(-17,-121,0,-121);c.quadraticCurveTo(17,-121,16,-101);c.quadraticCurveTo(9,-110,3,-106);c.quadraticCurveTo(-6,-112,-16,-101);fs(c,HR,2.5);
+  c.beginPath();c.moveTo(-8,-116);c.quadraticCurveTo(0,-120,7,-117);c.strokeStyle='#9a6a40';c.lineWidth=2;c.stroke();}
   [[-5.5],[5.5]].forEach(([ex])=>{E(c,ex,-99,2.4,3.2);c.fillStyle='#2b2026';c.fill();C(c,ex-.8,-100.3,.9);c.fillStyle='#fff';c.fill();});
   E(c,-9,-94,3.4,2);E(c,9,-94,3.4,2);c.fillStyle='rgba(255,110,140,.5)';c.fill();
+  if(rb){c.beginPath();c.moveTo(-4.5,-95);c.quadraticCurveTo(0,-89,4.5,-95);c.closePath();fs(c,'#fff',1.6);
+    [[-5.5],[5.5]].forEach(([ex])=>{rr(c,ex-5,-104,10,9,3.5);c.strokeStyle=OL;c.lineWidth=3.6;c.stroke();c.strokeStyle='#fbf6ee';c.lineWidth=2;c.stroke();});
+    c.beginPath();c.moveTo(-.5,-100);c.lineTo(.5,-100);c.strokeStyle='#fbf6ee';c.lineWidth=2;c.stroke();
+    c.restore();return;}
   c.beginPath();c.arc(0,-96,4,.2*Math.PI,.8*Math.PI);c.strokeStyle='#b04650';c.lineWidth=1.8;c.stroke();
   if(o.crown){for(let i=0;i<7;i++){const a=Math.PI*(1.08+i*.14);daisy(c,Math.cos(a)*16,-104+Math.sin(a)*15,5,i);}}
   else daisy(c,12,-113,4.5);
@@ -263,9 +276,9 @@ function voiceScore(v){const n=v.name.toLowerCase();let s=0;
   if(/compact|espeak/.test(n))s-=40;if(v.localService===false)s+=5;return s;}
 function loadVoices(){try{voices=speechSynthesis.getVoices().filter(v=>/^it/i.test(v.lang)).sort((a,b)=>voiceScore(b)-voiceScore(a));}catch(e){voices=[];}chosen=voices[0]||null;}
 try{loadVoices();speechSynthesis.onvoiceschanged=loadVoices;}catch(e){}
-const VOX={emma:{pitch:.95,rate:.82},girl:{pitch:1.3,rate:.95},luisa:{pitch:.95,rate:.85},gian:{pitch:.7,rate:.85},lucy:{pitch:1,rate:.85},gianco:{pitch:.75,rate:.85},giulio:{pitch:.8,rate:.9},mile:{pitch:1.05,rate:.9},simone:{pitch:.9,rate:.92},cecilia:{pitch:1.1,rate:.9},andrea:{pitch:.9,rate:.9},silvia:{pitch:1.05,rate:.9},cat:{pitch:1.15,rate:.9}};
+const VOX={emma:{pitch:.95,rate:.82},girl:{pitch:1.3,rate:.95},luisa:{pitch:.95,rate:.85},gian:{pitch:.7,rate:.85},lucy:{pitch:1,rate:.85},gianco:{pitch:.75,rate:.85},giulio:{pitch:.8,rate:.9},mile:{pitch:1.05,rate:.9},simone:{pitch:.9,rate:.92},cecilia:{pitch:1.1,rate:.9},rebecca:{pitch:1.25,rate:.95},andrea:{pitch:.9,rate:.9},silvia:{pitch:1.05,rate:.9},cat:{pitch:1.15,rate:.9}};
 /* Ogni frase registrata: audio/voce/<prefisso><numero>.mp3, nell'ordine di queste liste */
-const PREFIX={emma:'e',girl:'m',luisa:'l',gian:'g',lucy:'y',gianco:'k',giulio:'u',mile:'i',simone:'o',silvia:'s',cecilia:'c',andrea:'a'};
+const PREFIX={emma:'e',girl:'m',luisa:'l',gian:'g',lucy:'y',gianco:'k',giulio:'u',mile:'i',simone:'o',silvia:'s',cecilia:'c',andrea:'a',rebecca:'r'};
 const LINES={
   emma:['CIAO MACI!','CIAO PIUMI!','OGGI È LA FESTA DI MARGHERITA.','TROVA 3 MARGHERITE!','NON HAI ANCORA MARGHERITE.','HAI 1 MARGHERITA.','HAI 2 MARGHERITE.','NE MANCANO 3!','NE MANCANO 2!','NE MANCA 1!','BRAVO! CHE BELLE!','BRAVA! CHE BELLE!','SERVE UN NASTRO.','CERCA SOTTO IL VASO!','IL NASTRO È SOTTO UN VASO.','PROVA TUTTI I VASI!','CORRI!','PORTA I FIORI A MARGHERITA!','MIAO! CHE BELLA FESTA!'],
   girl:['CIAO MACI!','CIAO PIUMI!',"DOV'È NONNA EMMA?",'CIAO MACI E PIUMI!','CHE BELLE MARGHERITE!','GRAZIE! VI VOGLIO BENE!','CHE BELLA CORONCINA!','AIUTA I NONNI!','PIUMI! GIOCHIAMO?','PRENDI IL GOMITOLO!','ANDIAMO A MERENDA!','MACI! GIOCHIAMO?'],
@@ -281,7 +294,8 @@ const LINES={
   silvia:['CIAO MACI!','SONO CADUTI I MIEI LIBRI!','TROVA 3 LIBRI!','CERCA BENE IN CASA!','ECCO I MIEI LIBRI!','GRAZIE MACI!','VAI DALLO ZIO SIMONE.','TUTTI SUL DIVANO!','VI LEGGO UNA STORIA.',"C'ERA UNA VOLTA DUE GATTINI: MACI E PIUMI!",'CIAO PIUMI!','GRAZIE PIUMI!'],
   cecilia:['CIAO MACI!','ANDIAMO A FARE SURF!','SEGUI MARGHERITA SULLE ONDE!','PRENDI LE STELLINE!','CHE BELLE ONDE!','CIAO PIUMI!'],
   andrea:['CIAO MACI!','CHE BRAVO SURFISTA!','ECCO IL GELATO!','CIAO PIUMI!','CHE BRAVA SURFISTA!',
-    'FACCIAMO IL SAPONE CON MARGHERITA!','TROVA OLIO, LAVANDA E MIELE!','PORTALI AL PENTOLONE!','CHE BEL PROFUMO!','GRAZIE MACI!','GRAZIE PIUMI!','OH! LE BOLLE SONO SCAPPATE!','SCOPPIA LE BOLLE!','ECCO IL SAPONE!','BRAVO MACI!','BRAVA PIUMI!']
+    'FACCIAMO IL SAPONE CON MARGHERITA!','TROVA OLIO, LAVANDA E MIELE!','PORTALI AL PENTOLONE!','CHE BEL PROFUMO!','GRAZIE MACI!','GRAZIE PIUMI!','OH! LE BOLLE SONO SCAPPATE!','SCOPPIA LE BOLLE!','ECCO IL SAPONE!','BRAVO MACI!','BRAVA PIUMI!'],
+  rebecca:['CIAO MACI!','CIAO PIUMI!','SONO SPARITI TUTTI I GIOCHI!','MI AIUTI A TROVARLI?',"CERCA L'ORSETTO NELLE CESTE!",'IL MIO ORSETTO!','GRAZIE MACI!','GRAZIE PIUMI!','TROVA 3 PEZZI DEL PUZZLE!','CHE BELLO IL PUZZLE!','MANCA LA PALLA!','SPINGI LA PALLA FINO A NOI!','BRAVO MACI!','BRAVA PIUMI!','ADESSO GIOCHIAMO TUTTI INSIEME!']
 };
 let clip=null;
 function stopVoice(){try{speechSynthesis.cancel();}catch(e){}if(clip){clip.pause();clip=null;}}
@@ -294,7 +308,7 @@ function ttsSay(t,who){try{speechSynthesis.cancel();
   const p=VOX[who]||VOX.cat;u.pitch=p.pitch;u.rate=p.rate;speechSynthesis.speak(u);}catch(e){}}
 
 /* ---------- dialoghi ---------- */
-const NAMES={emma:'NONNA EMMA',girl:'MARGHERITA',luisa:'NONNA LUISA',gian:'NONNO GIAN',lucy:'NONNA LUCY',gianco:'NONNO GIANCO',giulio:'ZIO GIULIO',mile:'ZIA MILE',simone:'ZIO SIMONE',silvia:'ZIA SILVIA',cecilia:'MAMMA CECILIA',andrea:'PAPÀ ANDREA'};
+const NAMES={emma:'NONNA EMMA',girl:'MARGHERITA',luisa:'NONNA LUISA',gian:'NONNO GIAN',lucy:'NONNA LUCY',gianco:'NONNO GIANCO',giulio:'ZIO GIULIO',mile:'ZIA MILE',simone:'ZIO SIMONE',silvia:'ZIA SILVIA',cecilia:'MAMMA CECILIA',andrea:'PAPÀ ANDREA',rebecca:'REBECCA'};
 const PORTRAIT={
   emma:p=>{p.setTransform(2.6,0,0,2.6,0,0);drawCat(p,30,74,CATS.emma,{sit:true,f:1,t:0,noShadow:true});},
   girl:p=>{p.setTransform(2.4,0,0,2.4,0,0);drawGirl(p,38,148,{t:0,noShadow:true,crown:S.crown});},
@@ -307,7 +321,8 @@ const PORTRAIT={
   simone:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,145,{kind:'simone',noShadow:true});},
   silvia:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'silvia',noShadow:true});},
   cecilia:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'cecilia',noShadow:true});},
-  andrea:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'andrea',noShadow:true});}
+  andrea:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawPerson(p,42,150,{kind:'andrea',noShadow:true});},
+  rebecca:p=>{p.setTransform(2.2,0,0,2.2,0,0);drawGirl(p,42,150,{t:0,noShadow:true,rebecca:true});}
 };
 function openDialog(who,pages,done){
   if(!S.started)return;
