@@ -2,14 +2,14 @@
 
 Un piccolo gioco per bambini con tre gatti: Maci, Piumi e nonna Emma.
 
-1. **Il giardino di nonna Emma**: Maci e Piumi trovano tre margherite e un nastro e preparano una coroncina per Margherita.
+1. **Aiuta nonna Emma**: Maci e Piumi trovano tre margherite e un nastro e preparano una coroncina per Margherita.
 2. **A casa dei nonni**: Piumi aiuta nonna Luisa e nonno Gian a ritrovare occhiali e telecomando, gioca con il gomitolo e arriva la merenda.
 3. **In montagna dai nonni**: Maci raccoglie i mirtilli per la torta di nonna Lucy e riprende il cappello di nonno Gianco portato via dal vento.
 4. **In campagna dagli zii**: Maci raccoglie le carote nell'orto di zio Giulio, riporta nel pollaio le galline scappate a zia Mile e porta le uova per la frittata.
 5. **A casa degli zii**: Maci rimette a posto i libri di zia Silvia, acchiappa i tre robottini scappati dal mega computer di zio Simone e tutti ascoltano una storia sul divano.
 6. **Surf al mare**: Maci segue Margherita e mamma Cecilia sulle onde raccogliendo le stelline, poi papà Andrea aspetta tutti sotto l'ombrellone con il gelato.
 7. **Il sapone**: Maci e Piumi trovano olio d'oliva, lavanda e miele per il sapone di papà Andrea e Margherita, poi scoppiano le bolle scappate dal pentolone.
-8. **A giocare da Rebecca**: dalla cuginetta Rebecca sono spariti tutti i giochi. Maci e Piumi ritrovano l'orsetto nelle ceste e i pezzi del puzzle, e spingono la palla fino alla coperta dove giocano Margherita e Rebecca.
+8. **Gioca con Rebecca**: dalla cuginetta Rebecca sono spariti tutti i giochi. Maci e Piumi ritrovano l'orsetto nelle ceste e i pezzi del puzzle, e spingono la palla fino alla coperta dove giocano Margherita e Rebecca.
 
 **Gioca:** https://simoz.github.io/mp/
 

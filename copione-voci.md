@@ -6,7 +6,7 @@ Alla fine si registrano tutte insieme, così ogni personaggio ha sempre la stess
 ## Nonna Emma
 Voce: nonna italiana dolce e calma, parla lenta e chiara, sorride.
 
-### Livello 1 – Il giardino di nonna Emma
+### Livello 1 – Aiuta nonna Emma
 - Ciao Maci!
 - Ciao Piumi!
 - Oggi è la festa di Margherita.
@@ -30,7 +30,7 @@ Voce: nonna italiana dolce e calma, parla lenta e chiara, sorride.
 ## Margherita
 Voce: registrata da Margherita (vocali WhatsApp convertiti in `m01`…`m12`).
 
-### Livello 1 – Il giardino di nonna Emma
+### Livello 1 – Aiuta nonna Emma
 - Ciao Maci!
 - Ciao Piumi!
 - Dov'è nonna Emma?
@@ -216,7 +216,7 @@ Nota: con le voci sintetiche "Maci" va scritto "Màci", altrimenti a volte diven
 La cuginetta di Margherita. Voce: ragazzina allegra (ora: Microsoft Elsa, +25Hz, +5%). File `r01`…`r15`.
 Con questa voce "Ciao Maci" va scritto "Ciao, Màci!", altrimenti diventa "Ciao Machi".
 
-### Livello 8 – A giocare da Rebecca
+### Livello 8 – Gioca con Rebecca
 - Ciao Maci!
 - Sono spariti tutti i giochi!
 - Mi aiuti a trovarli?

@@ -688,7 +688,7 @@ function talkGirl(){
 }
 
 LEVELS.push({
-  name:'Il giardino di nonna Emma',ww:WW,wh:WH,bg:'#5f9a44',party:['maci','piumi'],music:'audio/stage1.mp3',
+  name:'Aiuta nonna Emma',ww:WW,wh:WH,bg:'#5f9a44',party:['maci','piumi'],music:'audio/stage1.mp3',
   start:{p:{x:580,y:410},q:{x:540,y:432}},
   quests:['VAI DA NONNA EMMA','TROVA 3 MARGHERITE','TORNA DA NONNA EMMA','CERCA SOTTO IL VASO','PORTA I FIORI A MARGHERITA','FESTA!'],
   fresh(){const items=['nastro','chiocciola','sasso','vuoto'].sort(()=>Math.random()-.5);
@@ -2296,7 +2296,7 @@ LEVELS.push({
 });
 })();
 
-/* ===== Livello 8: a giocare dalla cuginetta Rebecca ===== */
+/* ===== Livello 8: gioca con Rebecca ===== */
 (()=>{
 const WW=1200,WH=900;
 const HOUSE={x:60,y:120,w:330,h:170};
@@ -2435,7 +2435,7 @@ function festa(){
 }
 
 LEVELS.push({
-  name:'A giocare da Rebecca',ww:WW,wh:WH,bg:'#9ad66f',party:['maci','piumi'],music:'audio/stage8.mp3',
+  name:'Gioca con Rebecca',ww:WW,wh:WH,bg:'#9ad66f',party:['maci','piumi'],music:'audio/stage8.mp3',
   start:{p:{x:240,y:400},q:{x:200,y:416}},
   quests:['VAI DA REBECCA',"CERCA L'ORSETTO NELLE CESTE","PORTA L'ORSETTO A REBECCA",'TROVA 3 PEZZI DEL PUZZLE','PORTA IL PUZZLE A REBECCA','SPINGI LA PALLA SULLA COPERTA','TUTTI A GIOCARE!'],
   fresh:()=>({opened:0,count:0,carry:null,bear:false,puzzle:false,

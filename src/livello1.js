@@ -103,7 +103,7 @@ function talkGirl(){
 }
 
 LEVELS.push({
-  name:'Il giardino di nonna Emma',ww:WW,wh:WH,bg:'#5f9a44',party:['maci','piumi'],music:'audio/stage1.mp3',
+  name:'Aiuta nonna Emma',ww:WW,wh:WH,bg:'#5f9a44',party:['maci','piumi'],music:'audio/stage1.mp3',
   start:{p:{x:580,y:410},q:{x:540,y:432}},
   quests:['VAI DA NONNA EMMA','TROVA 3 MARGHERITE','TORNA DA NONNA EMMA','CERCA SOTTO IL VASO','PORTA I FIORI A MARGHERITA','FESTA!'],
   fresh(){const items=['nastro','chiocciola','sasso','vuoto'].sort(()=>Math.random()-.5);

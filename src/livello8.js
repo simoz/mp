@@ -1,4 +1,4 @@
-/* ===== Livello 8: a giocare dalla cuginetta Rebecca ===== */
+/* ===== Livello 8: gioca con Rebecca ===== */
 (()=>{
 const WW=1200,WH=900;
 const HOUSE={x:60,y:120,w:330,h:170};
@@ -137,7 +137,7 @@ function festa(){
 }
 
 LEVELS.push({
-  name:'A giocare da Rebecca',ww:WW,wh:WH,bg:'#9ad66f',party:['maci','piumi'],music:'audio/stage8.mp3',
+  name:'Gioca con Rebecca',ww:WW,wh:WH,bg:'#9ad66f',party:['maci','piumi'],music:'audio/stage8.mp3',
   start:{p:{x:240,y:400},q:{x:200,y:416}},
   quests:['VAI DA REBECCA',"CERCA L'ORSETTO NELLE CESTE","PORTA L'ORSETTO A REBECCA",'TROVA 3 PEZZI DEL PUZZLE','PORTA IL PUZZLE A REBECCA','SPINGI LA PALLA SULLA COPERTA','TUTTI A GIOCARE!'],
   fresh:()=>({opened:0,count:0,carry:null,bear:false,puzzle:false,
