@@ -26,6 +26,9 @@ function introMusicStart(){
 /* i browser fanno partire la musica solo dopo un gesto: sui telefoni conta quando il dito si stacca */
 ['pointerup','touchend','click','keydown'].forEach(ev=>addEventListener(ev,()=>{if(S&&!S.started&&music.paused)introMusicStart();},true));
 
+/* all'apertura il pulsante GIOCA: il tocco fa partire la musica e mostra i livelli */
+document.getElementById('bPlay').onclick=()=>{introMusicStart();sfx.meow();document.getElementById('start').classList.remove('splash');};
+
 /* ---------- i posti ---------- */
 function sign(c,x,n){
   rr(c,x-4,WALK-120,8,110,2);fs(c,'#8a5a36',2.4);

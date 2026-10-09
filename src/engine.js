@@ -369,7 +369,8 @@ addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);
 function switchTo(k){if(S.cur==k||!L.party.includes(k))return;S.cur=k;const a={...S.p};S.p.x=S.q.x;S.p.y=S.q.y;S.q.x=a.x;S.q.y=a.y;trail=[];target=null;sfx.meow();floatText(S.p.x,S.p.y-80,CATS[k].name+'!');updateHUD();}
 document.getElementById('bMaci').onclick=()=>switchTo('maci');
 document.getElementById('bPiumi').onclick=()=>switchTo('piumi');
-document.getElementById('bMus').onclick=()=>setMusic(!musicOn);
+/* se la musica è accesa ma il browser l'ha bloccata, il pulsante la fa partire invece di spegnerla */
+document.getElementById('bMus').onclick=()=>{if(musicOn&&music.paused){if(S&&S.started)music.play().catch(()=>{});else introMusicStart();return;}setMusic(!musicOn);};
 document.getElementById('stars').innerHTML=[0,1,2].map(()=>'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z" fill="#ffc93d" stroke="#3b2a35" stroke-width="1.6" stroke-linejoin="round"/></svg>').join('');
 
 /* ---------- avvio dei livelli ---------- */
